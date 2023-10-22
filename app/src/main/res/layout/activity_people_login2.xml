@@ -5,9 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/login_background_color"
-    tools:context=".RegisterPageActivity2">
-
-
+    tools:context=".peopleLoginActivity2">
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/register_logo"
         android:layout_width="150dp"
@@ -17,78 +15,34 @@
         android:layout_marginBottom="10dp"
         android:src="@drawable/android_image" />
     <TextView
-        android:id="@+id/register_head"
+        android:id="@+id/donar_login_head"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/register_logo"
-        android:text="People Register"
+        android:text="People login"
         android:textColor="@color/white"
         android:textSize="20dp"
         android:layout_marginBottom="10dp"
         android:gravity="center"
         />
     <EditText
-        android:id="@+id/people_name"
+        android:id="@+id/people_login_number"
         android:layout_width="match_parent"
-        android:layout_below="@id/register_head"
+        android:layout_below="@id/donar_login_head"
         android:layout_height="40dp"
         android:layout_marginLeft="40dp"
         android:layout_marginRight="40dp"
         android:layout_marginBottom="10dp"
         android:background="@drawable/input_button"
-        android:hint="Name"
-        android:padding="10dp"
-        android:textColor="#120202"
-        android:textColorHint="@color/white" />
-
-
-    <EditText
-        android:id="@+id/peoplephonenumber"
-        android:layout_width="match_parent"
-        android:layout_below="@id/people_name"
-        android:layout_height="40dp"
-        android:layout_marginLeft="40dp"
-        android:layout_marginRight="40dp"
-        android:layout_marginBottom="10dp"
-        android:background="@drawable/input_button"
-        android:hint="Phone Number"
+        android:hint="Number"
         android:padding="10dp"
         android:textColor="#120202"
         android:textColorHint="@color/white" />
     <EditText
-        android:id="@+id/people_national_id"
-        android:layout_width="match_parent"
-        android:layout_below="@id/peoplephonenumber"
-        android:layout_height="47dp"
-        android:layout_marginLeft="40dp"
-        android:layout_marginRight="40dp"
-        android:layout_marginBottom="10dp"
-        android:background="@drawable/input_button"
-        android:hint="National Id"
-        android:padding="10dp"
-        android:textColor="#120202"
-        android:textColorHint="@color/white" />
-    <EditText
-        android:id="@+id/people_bkash_number"
+        android:id="@+id/people_login_password"
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:layout_below="@id/people_national_id"
-        android:hint="Bkash number"
-        android:textColorHint="@color/white"
-        android:padding="10dp"
-        android:textColor="#120202"
-        android:background="@drawable/input_button"
-        android:layout_marginBottom="10dp"
-        android:layout_marginLeft="40dp"
-        android:layout_marginRight="40dp"
-        />
-
-
-    <EditText
-        android:id="@+id/password"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_below="@id/people_bkash_number"
+        android:layout_below="@id/people_login_number"
         android:hint="Password"
         android:textColorHint="@color/white"
         android:padding="10dp"
@@ -98,29 +52,14 @@
         android:layout_marginLeft="40dp"
         android:layout_marginRight="40dp"
         />
-    <EditText
-        android:id="@+id/con_password"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_below="@id/password"
-        android:hint="Confirm Password"
-        android:textColorHint="@color/white"
-        android:padding="10dp"
-        android:textColor="#120202"
-        android:background="@drawable/input_button"
-        android:layout_marginBottom="20dp"
-        android:layout_marginLeft="40dp"
-        android:layout_marginRight="40dp"
-        />
-
     <Button
-        android:id="@+id/registerbtn"
-        android:text="register"
+        android:id="@+id/res_btn"
+        android:text="Login"
         android:textColor="#FFFFFF"
         android:textSize="20sp"
         android:layout_width="150dp"
         android:layout_height="40dp"
-        android:layout_below="@id/con_password"
+        android:layout_below="@id/people_login_password"
         android:background="@drawable/btn_bckground"
         android:shadowColor="#A8A8A8"
         android:layout_marginLeft="50dp"
@@ -134,25 +73,26 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_below="@id/registerbtn"
+        android:layout_below="@id/res_btn"
         android:layout_marginTop="10dp"
         >
         <TextView
             android:id="@+id/reg_login_msg"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Do have an Account?"
+            android:text="Don't have an Account?"
             android:layout_marginLeft="40dp"
             android:textSize="15sp"
             android:textStyle="bold"
             android:textColor="@color/white" />
         <TextView
-            android:id="@+id/reg_login"
+            android:id="@+id/people_register"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Login"
+            android:text="Register"
             android:textSize="17sp"
             android:textStyle="bold"
             android:textColor="@color/white" />
     </LinearLayout>
+
 </RelativeLayout>

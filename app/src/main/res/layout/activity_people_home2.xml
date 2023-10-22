@@ -4,11 +4,26 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/login_background_color"
     tools:context=".peopleHomeActivity2">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/register_logo"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="110dp"
+        android:layout_marginBottom="10dp"
+        android:src="@drawable/android_image" />
     <TextView
+        android:id="@+id/donar_login_head"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="people page"
-        android:textSize="20dp"/>
-
+        android:layout_below="@id/register_logo"
+        android:text="People home page"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        android:layout_marginBottom="10dp"
+        android:gravity="center"
+        />
 </RelativeLayout>

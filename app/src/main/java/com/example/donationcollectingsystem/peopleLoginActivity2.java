@@ -7,18 +7,19 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
-public class RegisterPageActivity2 extends AppCompatActivity {
-     TextView loginTxt;
+public class peopleLoginActivity2 extends AppCompatActivity {
+    TextView peopleReg;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_register_page2);
-        loginTxt=findViewById(R.id.reg_login);
-        loginTxt.setOnClickListener(new View.OnClickListener() {
+        setContentView(R.layout.activity_people_login2);
+        peopleReg=findViewById(R.id.people_register);
+        peopleReg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent1=new Intent(RegisterPageActivity2.this, peopleLoginActivity2.class);
-                startActivity(intent1);
+                Intent intent2=new Intent(peopleLoginActivity2.this, RegisterPageActivity2.class);
+                startActivity(intent2);
             }
         });
     }
