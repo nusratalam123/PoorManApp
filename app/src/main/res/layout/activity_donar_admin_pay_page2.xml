@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/login_background_color"
+    tools:context=".DonarAdminPayPageActivity2">
+
+            <LinearLayout
+                android:id="@+id/image_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="10dp"
+                android:padding="10dp"
+
+                >
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="80dp"
+                    android:src="@drawable/bracbank" />
+<!--                <ImageView-->
+<!--                    android:layout_width="150dp"-->
+<!--                    android:layout_height="150dp"-->
+<!--                    android:src="@drawable/bracbank"-->
+<!--                    android:layout_marginRight="20dp"-->
+<!--                    >-->
+<!--                </ImageView>-->
+
+<!--                <ImageView-->
+<!--                    android:layout_width="150dp"-->
+<!--                    android:layout_height="150dp"-->
+<!--                    android:src="@drawable/bkashpayment">-->
+
+<!--                </ImageView>-->
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/bkashpayment" />
+            </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/textlayout"
+                    android:layout_below="@id/image_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:text="019920789992"
+                        android:textSize="20dp"
+                        android:textStyle="bold"
+                        android:layout_marginRight="30dp"
+                        android:textColor="@color/white">
+                    </TextView>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:textStyle="bold"
+                        android:text="01992078999"
+                        android:textSize="20dp"
+                        android:textColor="@color/white">
+                    </TextView>
+
+                </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/image_layout1"
+        android:layout_below="@id/textlayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="10dp"
+        android:padding="10dp"
+
+        >
+<!--        <ImageView-->
+<!--            android:layout_width="150dp"-->
+<!--            android:layout_height="150dp"-->
+<!--            android:src="@drawable/rocket"-->
+<!--            android:layout_marginRight="20dp"-->
+<!--            >-->
+<!--        </ImageView>-->
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/rocket"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="80dp"/>
+<!--        <ImageView-->
+<!--            android:layout_width="150dp"-->
+<!--            android:layout_height="150dp"-->
+<!--            android:src="@drawable/nogod">-->
+
+<!--        </ImageView>-->
+        <de.hdodenhof.circleimageview.CircleImageView
+
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/nogod" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/textlayout1"
+        android:layout_below="@id/image_layout1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:text="019920789992"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:layout_marginRight="30dp"
+            android:textColor="@color/white">
+        </TextView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:textStyle="bold"
+            android:text="01992078999"
+            android:textSize="20dp"
+            android:textColor="@color/white">
+        </TextView>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/donar_pay_page"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textlayout1"
+        android:text="Admin Pay page"
+        android:layout_marginLeft="100dp"
+        android:padding="10dp"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@color/white" />
+    <EditText
+        android:id="@+id/donar_pay_Name"
+        android:layout_width="match_parent"
+        android:layout_below="@id/donar_pay_page"
+        android:layout_height="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/input_button"
+        android:hint="Name or Company Name"
+        android:padding="10dp"
+        android:textColor="#120202"
+        android:textColorHint="@color/white" />
+    <EditText
+        android:id="@+id/donar_pay_transId"
+        android:layout_width="match_parent"
+        android:layout_below="@id/donar_pay_Name"
+        android:layout_height="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/input_button"
+        android:hint="Transaction Id"
+        android:padding="10dp"
+        android:textColor="#120202"
+        android:textColorHint="@color/white" />
+    <EditText
+        android:id="@+id/donar_pay_distric"
+        android:layout_width="match_parent"
+        android:layout_below="@id/donar_pay_transId"
+        android:layout_height="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/input_button"
+        android:hint="Distric Or Union name"
+        android:padding="10dp"
+        android:textColor="#120202"
+        android:textColorHint="@color/white" />
+    <Button
+        android:id="@+id/people_login_btn"
+        android:text="submit"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:layout_width="150dp"
+        android:layout_height="40dp"
+        android:layout_below="@id/donar_pay_distric"
+        android:background="@drawable/btn_bckground"
+        android:shadowColor="#A8A8A8"
+        android:layout_marginLeft="100dp"
+        android:shadowDx="0"
+        android:shadowDy="0"
+        android:shadowRadius="5"
+        android:layout_marginBottom="5dp"
+        />
+</RelativeLayout>

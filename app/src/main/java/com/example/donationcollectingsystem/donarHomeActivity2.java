@@ -32,13 +32,13 @@ public class donarHomeActivity2 extends AppCompatActivity {
                 String companyemail = donaremail.getText().toString();
                 String pass = password.getText().toString();
 
-                if(donaremail.equals("")||pass.equals(""))
+                if(companyemail.equals("")||pass.equals(""))
                     Toast.makeText(donarHomeActivity2.this, "Please enter all the fields", Toast.LENGTH_SHORT).show();
                 else{
                     Boolean checkuserpass = DB.checkMailandPass(companyemail, pass);
                     if(checkuserpass==true){
                         Toast.makeText(donarHomeActivity2.this, "Sign in successfull", Toast.LENGTH_SHORT).show();
-                        Intent intent  = new Intent(getApplicationContext(), MainActivity.class);
+                        Intent intent  = new Intent(getApplicationContext(), donarMainHomePageActivity2.class);
                         startActivity(intent);
                     }else{
                         Toast.makeText(donarHomeActivity2.this, "Invalid Credentials", Toast.LENGTH_SHORT).show();

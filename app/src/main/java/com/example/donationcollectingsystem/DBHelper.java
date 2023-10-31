@@ -12,7 +12,7 @@ public class DBHelper extends SQLiteOpenHelper {
     public static final String DBNAME = "donar_login.db";
 
     public DBHelper(@Nullable Context context) {
-        super(context, DBNAME, null, 2);
+        super(context, DBNAME, null, 3);
     }
 
     @Override
@@ -38,7 +38,7 @@ public class DBHelper extends SQLiteOpenHelper {
         else
             return true;
     }
-    public Boolean checkemail(String email) {
+    public Boolean checkmail(String email) {
         SQLiteDatabase MyDB = this.getWritableDatabase();
         Cursor cursor = MyDB.rawQuery("Select * from donar_table where email = ?", new String[]{email});
         if (cursor.getCount() > 0)
@@ -55,6 +55,4 @@ public class DBHelper extends SQLiteOpenHelper {
         else
             return false;
     }
-
-
 }

@@ -11,32 +11,32 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class DonarRegistrationActivity2 extends AppCompatActivity {
-    EditText name,email,phone,pass,conpass;
+    EditText dname,demail,dphone,dpass,dconpass;
     TextView donarLogin;
     Button donarReg;
-    DBHelper db;
+    DBHelper donardb;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_donar_registration2);
-        name=findViewById(R.id.donarname);
-        email=findViewById(R.id.donarmail);
-        phone=findViewById(R.id.donarnumber);
-        pass=findViewById(R.id.donarpassword);
-        conpass=findViewById(R.id.donarconpassword);
+        dname=findViewById(R.id.donarname);
+        demail=findViewById(R.id.donarmail);
+        dphone=findViewById(R.id.donarnumber);
+        dpass=findViewById(R.id.donarpassword);
+        dconpass=findViewById(R.id.donarconpassword);
         donarReg=findViewById(R.id.donarregbtn);
         donarLogin=findViewById(R.id.donar_reg_login);
 
-        db = new DBHelper(this);
+        donardb = new DBHelper(this);
         donarReg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                String username = name.getText().toString();
-                String mail = email.getText().toString();
-                String number = phone.getText().toString();
-                String pas = pass.getText().toString();
-                String repass = conpass.getText().toString();
+                String username = dname.getText().toString();
+                String mail = demail.getText().toString();
+                String number = dphone.getText().toString();
+                String pas = dpass.getText().toString();
+                String repass = dconpass.getText().toString();
 
                 if(username.equals("")||mail.equals("")||number.equals("")||pas.equals("")||repass.equals("")) {
                     Toast.makeText(DonarRegistrationActivity2.this, "Please enter all the fields", Toast.LENGTH_SHORT).show();
@@ -44,12 +44,12 @@ public class DonarRegistrationActivity2 extends AppCompatActivity {
 
                 else{
                     if(pas.equals(repass)){
-                        Boolean checkcompanyemail = db.checkemail(mail);
+                        Boolean checkcompanyemail = donardb.checkmail(mail);
                         if(checkcompanyemail==false){
-                            Boolean insert = db.insertData(username,mail,number, pas);
+                            Boolean insert = donardb.insertData(username,mail,number, pas);
                             if(insert==true){
                                 Toast.makeText(DonarRegistrationActivity2.this, "Registered successfully", Toast.LENGTH_SHORT).show();
-                                Intent intent = new Intent(getApplicationContext(),MainActivity.class);
+                                Intent intent = new Intent(getApplicationContext(),donarHomeActivity2.class);
                                 startActivity(intent);
                             }else{
                                 Toast.makeText(DonarRegistrationActivity2.this, "Registration failed", Toast.LENGTH_SHORT).show();

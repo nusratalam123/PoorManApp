@@ -13,6 +13,18 @@
         android:theme="@style/Theme.DonationCollectingSystem"
         tools:targetApi="31">
         <activity
+            android:name=".donarAdminPageActivity2"
+            android:exported="false" />
+        <activity
+            android:name=".DonarUserPayPageActivity2"
+            android:exported="false" />
+        <activity
+            android:name=".DonarDistricPayPageActivity2"
+            android:exported="false" />
+        <activity
+            android:name=".DonarAdminPayPageActivity2"
+            android:exported="false" />
+        <activity
             android:name=".peopleLoginActivity2"
             android:exported="false" />
         <activity

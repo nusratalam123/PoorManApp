@@ -1,9 +1,77 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/login_background_color"
     tools:context=".donarMainHomePageActivity2">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/register_logo"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="110dp"
+        android:layout_marginBottom="10dp"
+        android:src="@drawable/android_image" />
+    <TextView
+        android:id="@+id/donar_pay_page"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/register_logo"
+        android:text="Donar pay page"
+        android:layout_marginLeft="100dp"
+        android:padding="10dp"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@color/white" />
+
+    <Button
+        android:id="@+id/admin_btn"
+        android:text="Admin"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:layout_width="150dp"
+        android:layout_height="40dp"
+        android:layout_below="@id/donar_pay_page"
+        android:background="@drawable/btn_bckground"
+        android:shadowColor="#A8A8A8"
+        android:layout_marginLeft="110dp"
+        android:shadowDx="0"
+        android:shadowDy="0"
+        android:shadowRadius="5"
+        android:layout_marginBottom="5dp"
+        /> <Button
+    android:id="@+id/distric_btn"
+    android:text="Distric"
+    android:textColor="#FFFFFF"
+    android:textSize="20sp"
+    android:layout_width="150dp"
+    android:layout_height="40dp"
+    android:layout_below="@id/admin_btn"
+    android:background="@drawable/btn_bckground"
+    android:shadowColor="#A8A8A8"
+    android:layout_marginLeft="110dp"
+    android:shadowDx="0"
+    android:shadowDy="0"
+    android:shadowRadius="5"
+    android:layout_marginBottom="5dp"
+    /> <Button
+    android:id="@+id/user_btn"
+    android:text="user"
+    android:textColor="#FFFFFF"
+    android:textSize="20sp"
+    android:layout_width="150dp"
+    android:layout_height="40dp"
+    android:layout_below="@id/distric_btn"
+    android:background="@drawable/btn_bckground"
+    android:shadowColor="#A8A8A8"
+    android:layout_marginLeft="110dp"
+    android:shadowDx="0"
+    android:shadowDy="0"
+    android:shadowRadius="5"
+    android:layout_marginBottom="5dp"
+    />
+
+</RelativeLayout>

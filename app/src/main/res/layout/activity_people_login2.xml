@@ -53,7 +53,7 @@
         android:layout_marginRight="40dp"
         />
     <Button
-        android:id="@+id/res_btn"
+        android:id="@+id/people_login_btn"
         android:text="Login"
         android:textColor="#FFFFFF"
         android:textSize="20sp"
@@ -73,7 +73,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_below="@id/res_btn"
+        android:layout_below="@id/people_login_btn"
         android:layout_marginTop="10dp"
         >
         <TextView
