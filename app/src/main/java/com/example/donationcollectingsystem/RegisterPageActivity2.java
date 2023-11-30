@@ -11,7 +11,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class RegisterPageActivity2 extends AppCompatActivity {
-     EditText name,mobile,bkash,national_id,pass,conPass;
+     EditText name,mobile,bkash,national_id,distric,subDistric,pass,conPass;
      TextView loginTxt;
      Button peopleReg;
      DBHelper1 db;
@@ -24,6 +24,8 @@ public class RegisterPageActivity2 extends AppCompatActivity {
         mobile=findViewById(R.id.peoplephonenumber);
         national_id=findViewById(R.id.people_national_id);
         bkash=findViewById(R.id.people_bkash_number);
+        distric=findViewById(R.id.people_distric);
+        subDistric=findViewById(R.id.people_subdistric);
         pass=findViewById(R.id.password);
         peopleReg=findViewById(R.id.registerbtn);
         conPass=findViewById(R.id.con_password);
@@ -36,9 +38,11 @@ public class RegisterPageActivity2 extends AppCompatActivity {
                 String Mobile = mobile.getText().toString();
                 String nid = national_id.getText().toString();
                 String Bkash = bkash.getText().toString();
+                String Distric=distric.getText().toString();
+                String SubDistric=subDistric.getText().toString();
                 String pas = pass.getText().toString();
                 String conpass = conPass.getText().toString();
-                if(pname.equals("")||Mobile.equals("")||nid.equals("")||Bkash.equals("")||pas.equals("")||conpass.equals("")) {
+                if(pname.equals("")||Mobile.equals("")||nid.equals("")||Bkash.equals("")||Distric.equals("")||SubDistric.equals("")||pas.equals("")||conpass.equals("")) {
                     Toast.makeText(RegisterPageActivity2.this, "Please enter all the fields", Toast.LENGTH_SHORT).show();
                 }
 
@@ -46,7 +50,7 @@ public class RegisterPageActivity2 extends AppCompatActivity {
                     if(pas.equals(conpass)){
                         Boolean checkmobile = db.checkmobile(Mobile);
                         if(checkmobile==false){
-                            Boolean insert = db.insertData1(pname,Mobile,nid,Bkash, pas);
+                            Boolean insert = db.insertData1(pname,Mobile,nid,Bkash,Distric,SubDistric, pas);
                             if(insert==true){
                                 Toast.makeText(RegisterPageActivity2.this, "Registered successfully", Toast.LENGTH_SHORT).show();
                                 Intent intent = new Intent(getApplicationContext(),peopleLoginActivity2.class);

@@ -11,7 +11,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class peopleLoginActivity2 extends AppCompatActivity {
-    EditText pmobile ,Ppass;
+    EditText pmobile ,Ppass,pname;
     Button PeopleLogin;
     TextView peopleReg;
     DBHelper1 DB;
@@ -21,6 +21,7 @@ public class peopleLoginActivity2 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_people_login2);
         peopleReg=findViewById(R.id.people_register);
+        pname = (EditText) findViewById(R.id.people_name);
         pmobile = (EditText) findViewById(R.id.people_login_number);
         Ppass = (EditText) findViewById(R.id.people_login_password);
         PeopleLogin=(Button) findViewById(R.id.people_login_btn);
@@ -30,19 +31,20 @@ public class peopleLoginActivity2 extends AppCompatActivity {
         PeopleLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                String Pname=pname.getText().toString();
                 String Peoplemobile = pmobile.getText().toString();
                 String peoplepas = Ppass.getText().toString();
 
-                if(Peoplemobile.equals("")||peoplepas.equals("")) {
+                if(Pname.equals("")||Peoplemobile.equals("")||peoplepas.equals("")) {
                     Toast.makeText(peopleLoginActivity2.this, "Please enter all the fields", Toast.LENGTH_SHORT).show();
                 }
                 else{
-                    Boolean checkMobileandPass = DB.checkMobileandPass(Peoplemobile, peoplepas);
+                    Boolean checkMobileandPass = DB.checkMobileandPass(Pname,Peoplemobile, peoplepas);
                     if(checkMobileandPass==true){
                         Toast.makeText(peopleLoginActivity2.this, "Sign in successfull", Toast.LENGTH_SHORT).show();
-                        Intent intent  = new Intent(getApplicationContext(),peopleHomeActivity2.class);
-                        startActivity(intent);
+                        Intent intent1=new Intent(peopleLoginActivity2.this, AllPeopledInformationActivity2.class);
+                        intent1.putExtra("name",Pname);
+                        startActivity(intent1);
                     }else{
                         Toast.makeText(peopleLoginActivity2.this, "Invalid Credentials", Toast.LENGTH_SHORT).show();
                     }

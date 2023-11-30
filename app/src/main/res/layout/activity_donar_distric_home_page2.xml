@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/login_background_color"
-    tools:context=".DonarDistricPayPageActivity2">
-
+    tools:context=".donar_distric_home_pageActivity2">
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
@@ -27,7 +27,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="12dp"
-                android:text="Poor Man App"
+                android:text="Poor Man"
                 android:layout_marginLeft="2dp"
                 android:textSize="20sp"
                 android:textStyle="bold"
@@ -39,12 +39,13 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Distric Pay page"
+            android:text="Division Name"
             android:layout_marginLeft="115dp"
             android:textSize="20sp"
             android:textStyle="bold"
             android:textColor="@color/white" />
         <Button
+            android:id="@+id/dhaka"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/input_button"
@@ -57,10 +58,50 @@
 
         </Button>
         <Button
+            android:id="@+id/chittagong"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/input_button"
-            android:text="Faridpur"
+            android:text="Chittagong"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:padding="10dp"
+            android:layout_marginBottom="10dp">
+
+        </Button>
+        <Button
+            android:id="@+id/barisal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/input_button"
+            android:text="Barisal"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:padding="10dp"
+            android:layout_marginBottom="10dp">
+
+        </Button>
+        <Button
+            android:id="@+id/khulna"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/input_button"
+            android:text="Khulna"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:padding="10dp"
+            android:layout_marginBottom="10dp">
+
+        </Button>
+        <Button
+            android:id="@+id/rajshahi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/input_button"
+            android:text="Rajshahi"
             android:textColor="@color/white"
             android:textSize="20dp"
             android:textStyle="bold"
@@ -72,7 +113,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/input_button"
-            android:text="Gazipur"
+            android:text="Rangpur"
             android:textColor="@color/white"
             android:textSize="20dp"
             android:textStyle="bold"
@@ -81,10 +122,11 @@
 
         </Button>
         <Button
+            android:id="@+id/sylhet"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/input_button"
-            android:text="Gopalganj"
+            android:text="Sylhet"
             android:textColor="@color/white"
             android:textSize="20dp"
             android:textStyle="bold"
@@ -93,10 +135,11 @@
 
         </Button>
         <Button
+            android:id="@+id/mymensingh"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/input_button"
-            android:text="Kishoreganj"
+            android:text="Mymensingh"
             android:textColor="@color/white"
             android:textSize="20dp"
             android:textStyle="bold"
@@ -104,110 +147,7 @@
             android:layout_marginBottom="10dp">
 
         </Button>
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/input_button"
-            android:text="Madaripur"
-            android:textColor="@color/white"
-            android:textSize="20dp"
-            android:textStyle="bold"
-            android:padding="10dp"
-            android:layout_marginBottom="10dp">
-
-        </Button>
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/input_button"
-            android:text="Manikganj"
-            android:textColor="@color/white"
-            android:textSize="20dp"
-            android:textStyle="bold"
-            android:padding="10dp"
-            android:layout_marginBottom="10dp">
-
-        </Button>
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/input_button"
-            android:text="Munshiganj"
-            android:textColor="@color/white"
-            android:textSize="20dp"
-            android:textStyle="bold"
-            android:padding="10dp"
-            android:layout_marginBottom="10dp">
-
-        </Button>
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/input_button"
-            android:text="Narayanganj"
-            android:textColor="@color/white"
-            android:textSize="20dp"
-            android:textStyle="bold"
-            android:padding="10dp"
-            android:layout_marginBottom="10dp">
-
-        </Button>
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/input_button"
-            android:text="Narsingdi"
-            android:textColor="@color/white"
-            android:textSize="20dp"
-            android:textStyle="bold"
-            android:padding="10dp"
-            android:layout_marginBottom="10dp">
-
-        </Button>
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/input_button"
-            android:text="Rajbari"
-            android:textColor="@color/white"
-            android:textSize="20dp"
-            android:textStyle="bold"
-            android:padding="10dp"
-            android:layout_marginBottom="10dp">
-
-        </Button>
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/input_button"
-            android:text="Shariatpur"
-            android:textColor="@color/white"
-            android:textSize="20dp"
-            android:textStyle="bold"
-            android:padding="10dp"
-            android:layout_marginBottom="10dp">
-
-        </Button>
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/input_button"
-            android:text="Tangail"
-            android:textColor="@color/white"
-            android:textSize="20dp"
-            android:textStyle="bold"
-            android:padding="10dp"
-            android:layout_marginBottom="10dp">
-
-        </Button>
-
-
     </LinearLayout>
 
 
-
-
-
-
-
-</ScrollView>
+</RelativeLayout>

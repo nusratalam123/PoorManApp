@@ -82,13 +82,41 @@
         android:layout_marginLeft="40dp"
         android:layout_marginRight="40dp"
         />
+    <EditText
+        android:id="@+id/people_distric"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@id/people_bkash_number"
+        android:hint="Distric name"
+        android:textColorHint="@color/white"
+        android:padding="10dp"
+        android:textColor="#120202"
+        android:background="@drawable/input_button"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        />
+    <EditText
+        android:id="@+id/people_subdistric"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@id/people_distric"
+        android:hint="Sub-distric Name"
+        android:textColorHint="@color/white"
+        android:padding="10dp"
+        android:textColor="#120202"
+        android:background="@drawable/input_button"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        />
 
 
     <EditText
         android:id="@+id/password"
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:layout_below="@id/people_bkash_number"
+        android:layout_below="@id/people_subdistric"
         android:hint="Password"
         android:textColorHint="@color/white"
         android:padding="10dp"
@@ -108,7 +136,7 @@
         android:padding="10dp"
         android:textColor="#120202"
         android:background="@drawable/input_button"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="10dp"
         android:layout_marginLeft="40dp"
         android:layout_marginRight="40dp"
         />
@@ -135,7 +163,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_below="@id/registerbtn"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="5dp"
         >
         <TextView
             android:id="@+id/reg_login_msg"

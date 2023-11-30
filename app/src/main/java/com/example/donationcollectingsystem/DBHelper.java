@@ -9,10 +9,10 @@ import android.database.sqlite.SQLiteOpenHelper;
 import androidx.annotation.Nullable;
 
 public class DBHelper extends SQLiteOpenHelper {
-    public static final String DBNAME = "donar_login.db";
+    public static final String DBNAME = "donar_database.db";
 
     public DBHelper(@Nullable Context context) {
-        super(context, DBNAME, null, 3);
+        super(context, DBNAME, null, 4);
     }
 
     @Override

@@ -1,77 +1,154 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/login_background_color"
-    tools:context=".donarMainHomePageActivity2">
+    tools:context=".donarMainHomePageActivity2"
+    android:orientation="vertical">
 
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/register_logo"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginLeft="110dp"
-        android:layout_marginBottom="10dp"
-        android:src="@drawable/android_image" />
+
+
+    <RelativeLayout
+        android:id="@+id/linear_layout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+
+        >
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/baseline_home_24"
+            >
+        </ImageView>
+
+        <TextView
+            android:id="@+id/donar_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_gravity="end"
+            android:padding="13dp"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            android:textColor="@color/white" />
+    </RelativeLayout>
     <TextView
-        android:id="@+id/donar_pay_page"
+        android:id="@+id/donar_payment_method"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/register_logo"
-        android:text="Donar pay page"
-        android:layout_marginLeft="100dp"
-        android:padding="10dp"
+        android:layout_below="@id/linear_layout1"
+        android:text="Donar Payment Method"
+        android:layout_marginLeft="80dp"
         android:textSize="20sp"
         android:textStyle="bold"
         android:textColor="@color/white" />
+    <TextView
+        android:id="@+id/area_distribute"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/linear_layout1"
+        android:text="Area to Distribute"
+        android:layout_marginLeft="20dp"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:textColor="@color/white" />
+    <TextView
+        android:id="@+id/textview_distric"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:padding="3dp"
+        android:layout_marginLeft="20dp"
+        android:textColorHint="@color/white"
+        android:text="Distric*"
+        android:textColor="@color/white"
+        android:focusable="true"
+        android:focusableInTouchMode="true"/>
 
-    <Button
-        android:id="@+id/admin_btn"
-        android:text="Admin"
-        android:textColor="#FFFFFF"
-        android:textSize="20sp"
-        android:layout_width="150dp"
+    <RelativeLayout
+
+        android:layout_width="320dp"
         android:layout_height="40dp"
-        android:layout_below="@id/donar_pay_page"
-        android:background="@drawable/btn_bckground"
-        android:shadowColor="#A8A8A8"
-        android:layout_marginLeft="110dp"
-        android:shadowDx="0"
-        android:shadowDy="0"
-        android:shadowRadius="5"
-        android:layout_marginBottom="5dp"
-        /> <Button
-    android:id="@+id/distric_btn"
-    android:text="Distric"
-    android:textColor="#FFFFFF"
-    android:textSize="20sp"
-    android:layout_width="150dp"
-    android:layout_height="40dp"
-    android:layout_below="@id/admin_btn"
-    android:background="@drawable/btn_bckground"
-    android:shadowColor="#A8A8A8"
-    android:layout_marginLeft="110dp"
-    android:shadowDx="0"
-    android:shadowDy="0"
-    android:shadowRadius="5"
-    android:layout_marginBottom="5dp"
-    /> <Button
-    android:id="@+id/user_btn"
-    android:text="user"
-    android:textColor="#FFFFFF"
-    android:textSize="20sp"
-    android:layout_width="150dp"
-    android:layout_height="40dp"
-    android:layout_below="@id/distric_btn"
-    android:background="@drawable/btn_bckground"
-    android:shadowColor="#A8A8A8"
-    android:layout_marginLeft="110dp"
-    android:shadowDx="0"
-    android:shadowDy="0"
-    android:shadowRadius="5"
-    android:layout_marginBottom="5dp"
-    />
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp"
+        android:background="@drawable/input_button"
+        android:orientation="vertical"
+        >
 
-</RelativeLayout>
+
+        <Spinner
+            android:id="@+id/spinner_distric"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+
+           />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/textview_subdistric"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:padding="3dp"
+        android:layout_marginLeft="20dp"
+        android:textColorHint="@color/white"
+        android:text="sub-Distric*"
+        android:textColor="@color/white"
+        android:focusable="true"
+        android:focusableInTouchMode="true"/>
+    <RelativeLayout
+        android:layout_width="320dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp"
+        android:background="@drawable/input_button"
+        android:orientation="horizontal"
+        >
+
+        <Spinner
+            android:id="@+id/spinner_subdistric"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+
+            />
+    </RelativeLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/linear_layout1"
+        android:text="Distribute Through"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="15dp"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:textColor="@color/white" />
+    <Button
+        android:id="@+id/govtment_btn"
+        android:layout_width="200dp"
+        android:layout_height="30dp"
+        android:background="@drawable/btn_bckground"
+        android:textColor="@color/white"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="20dp"
+        android:text="Government"
+        android:textAlignment="center" />
+    <Button
+        android:id="@+id/selfPeople_btn"
+        android:layout_width="200dp"
+        android:layout_height="30dp"
+        android:background="@drawable/btn_bckground"
+        android:textColor="@color/white"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="20dp"
+        android:text="self Person"
+        android:textAlignment="center" />
+</LinearLayout>

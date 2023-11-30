@@ -13,6 +13,36 @@
         android:theme="@style/Theme.DonationCollectingSystem"
         tools:targetApi="31">
         <activity
+            android:name=".AllPeopledInformationActivity2"
+            android:exported="false" />
+        <activity
+            android:name=".GovtInformationActivity2"
+            android:exported="false" />
+        <activity
+            android:name=".donarChittagongHomeActivity2"
+            android:exported="false" />
+        <activity
+            android:name=".donarMymensinghHomeActivity2"
+            android:exported="false" />
+        <activity
+            android:name=".donarSylhetHomeActivity2"
+            android:exported="false" />
+        <activity
+            android:name=".donarRangpurHomeActivity2"
+            android:exported="false" />
+        <activity
+            android:name=".donarBarisalHomeActivity2"
+            android:exported="false" />
+        <activity
+            android:name=".donarKhulnaHomeActivity2"
+            android:exported="false" />
+        <activity
+            android:name=".donarRajshahiHomeActivity2"
+            android:exported="false" />
+        <activity
+            android:name=".donar_distric_home_pageActivity2"
+            android:exported="false" />
+        <activity
             android:name=".donarAdminPageActivity2"
             android:exported="false" />
         <activity

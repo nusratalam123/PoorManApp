@@ -19,9 +19,9 @@ public class donarHomeActivity2 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_donar_home2);
-        donaremail = (EditText) findViewById(R.id.donar_login_email);
-        password = (EditText) findViewById(R.id.donar_login_password);
-        btnlogin=(Button) findViewById(R.id.login_btn);
+        donaremail = (EditText) findViewById(R.id.donar_signin_email);
+        password = (EditText) findViewById(R.id.donar_signin_password);
+        btnlogin=(Button) findViewById(R.id.donar_Signin_btn);
         donarRegisterTxt=findViewById(R.id.donar_register);
         DB = new DBHelper(this);
 
@@ -37,9 +37,11 @@ public class donarHomeActivity2 extends AppCompatActivity {
                 else{
                     Boolean checkuserpass = DB.checkMailandPass(companyemail, pass);
                     if(checkuserpass==true){
-                        Toast.makeText(donarHomeActivity2.this, "Sign in successfull", Toast.LENGTH_SHORT).show();
                         Intent intent  = new Intent(getApplicationContext(), donarMainHomePageActivity2.class);
+                        intent.putExtra("email",companyemail);
                         startActivity(intent);
+                       // Toast.makeText(donarHomeActivity2.this, "Sign in successfull", Toast.LENGTH_SHORT).show();
+
                     }else{
                         Toast.makeText(donarHomeActivity2.this, "Invalid Credentials", Toast.LENGTH_SHORT).show();
                     }

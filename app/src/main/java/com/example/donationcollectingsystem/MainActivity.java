@@ -16,8 +16,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         people=findViewById(R.id.people_btn);
         donar=findViewById(R.id.donar_btn);
-        login=findViewById(R.id.main_login);
-        register=findViewById(R.id.main_register);
+       // login=findViewById(R.id.main_login);
+       // register=findViewById(R.id.main_register);
         people.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -32,20 +32,20 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent2);
             }
         });
-        login.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent3=new Intent(MainActivity.this,loginPageActivity2.class);
-                startActivity(intent3);
-            }
-        });
-        register.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent3=new Intent(MainActivity.this, RegisterPageActivity2.class);
-                startActivity(intent3);
-            }
-        });
+//        login.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent intent3=new Intent(MainActivity.this,loginPageActivity2.class);
+//                startActivity(intent3);
+//            }
+//        });
+//        register.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent intent3=new Intent(MainActivity.this, RegisterPageActivity2.class);
+//                startActivity(intent3);
+//            }
+//        });
 
     }
 }
