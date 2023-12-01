@@ -4,11 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class donarChittagongHomeActivity2 extends AppCompatActivity {
+public class DonarUserListPageActivity2 extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_donar_chittagong_home2);
+        setContentView(R.layout.activity_donar_user_list_page2);
     }
 }

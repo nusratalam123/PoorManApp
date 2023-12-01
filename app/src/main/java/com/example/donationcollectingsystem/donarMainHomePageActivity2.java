@@ -161,9 +161,7 @@ public class donarMainHomePageActivity2 extends AppCompatActivity {
                         default:  break;
                     }
                     subDisAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);     // Specify the layout to use when the list of choices appears
-                    SubDisSpinner.setAdapter(subDisAdapter);        //Populate the list of Districts in respect of the State selected
-
-                    //To obtain the selected District from the spinner
+                    SubDisSpinner.setAdapter(subDisAdapter);
                     SubDisSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                         @Override
                         public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -210,23 +208,20 @@ public class donarMainHomePageActivity2 extends AppCompatActivity {
         govt_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                Toast.makeText(donarMainHomePageActivity2.this, "Selected State: "+selectDis+"\nSelected District: "+selectSubdis, Toast.LENGTH_LONG).show();
                 Intent intent1=new Intent(donarMainHomePageActivity2.this, GovtInformationActivity2.class);
+                intent1.putExtra("district",selectDis);
+                intent1.putExtra("subsidise",selectSubdis) ;
                 startActivity(intent1);
             }
         });
-//        distric_btn.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent intent1=new Intent(donarMainHomePageActivity2.this, donar_distric_home_pageActivity2.class);
-//                startActivity(intent1);
-//            }
-//        });
-//        user_btn.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent intent1=new Intent(donarMainHomePageActivity2.this, DonarUserPayPageActivity2.class);
-//                startActivity(intent1);
-//            }
-//        });
+        self_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent =new Intent(donarMainHomePageActivity2.this,peopleHomeActivity2.class);
+                startActivity(intent);
+            }
+        });
     }
 }

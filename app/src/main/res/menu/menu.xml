@@ -1,13 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-    <item
-        android:id="@+id/item_search"
-        android:icon="@drawable/ic_action_search"
-        android:title="Search"
-        app:actionViewClass="android.support.v7.widget.searchView"
-        app:showAsAction="collapseActionView|always"
 
-        ></item>
+    <item android:id="@+id/home"
+        android:title="home"
+        android:icon="@drawable/baseline_home_24"/>
+    <item android:id="@+id/donationLogin"
+        android:title="donation Page"
+        android:icon="@drawable/baseline_people_24"/>
+    <item android:id="@+id/peopleLogin"
+        android:title="people page"
+        android:icon="@drawable/baseline_person_3_24"/>
+
+    <item android:id="@+id/settings"
+        android:title="Settings"
+        android:icon="@drawable/baseline_admin_panel_settings_24"/>
 
 </menu>

@@ -13,6 +13,9 @@
         android:theme="@style/Theme.DonationCollectingSystem"
         tools:targetApi="31">
         <activity
+            android:name=".DonarUserListPageActivity2"
+            android:exported="false" />
+        <activity
             android:name=".AllPeopledInformationActivity2"
             android:exported="false" />
         <activity

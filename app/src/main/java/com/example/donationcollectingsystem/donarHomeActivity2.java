@@ -40,7 +40,7 @@ public class donarHomeActivity2 extends AppCompatActivity {
                         Intent intent  = new Intent(getApplicationContext(), donarMainHomePageActivity2.class);
                         intent.putExtra("email",companyemail);
                         startActivity(intent);
-                       // Toast.makeText(donarHomeActivity2.this, "Sign in successfull", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(donarHomeActivity2.this, "Sign in successfull", Toast.LENGTH_SHORT).show();
 
                     }else{
                         Toast.makeText(donarHomeActivity2.this, "Invalid Credentials", Toast.LENGTH_SHORT).show();
