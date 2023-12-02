@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -11,7 +14,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.DonationCollectingSystem"
+        android:usesCleartextTraffic="true"
         tools:targetApi="31">
+        <activity
+            android:name=".PaymentPageActivity2"
+            android:exported="false" />
         <activity
             android:name=".DonarUserListPageActivity2"
             android:exported="false" />
@@ -20,27 +27,6 @@
             android:exported="false" />
         <activity
             android:name=".GovtInformationActivity2"
-            android:exported="false" />
-        <activity
-            android:name=".donarChittagongHomeActivity2"
-            android:exported="false" />
-        <activity
-            android:name=".donarMymensinghHomeActivity2"
-            android:exported="false" />
-        <activity
-            android:name=".donarSylhetHomeActivity2"
-            android:exported="false" />
-        <activity
-            android:name=".donarRangpurHomeActivity2"
-            android:exported="false" />
-        <activity
-            android:name=".donarBarisalHomeActivity2"
-            android:exported="false" />
-        <activity
-            android:name=".donarKhulnaHomeActivity2"
-            android:exported="false" />
-        <activity
-            android:name=".donarRajshahiHomeActivity2"
             android:exported="false" />
         <activity
             android:name=".donar_distric_home_pageActivity2"

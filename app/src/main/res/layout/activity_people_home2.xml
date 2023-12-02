@@ -10,38 +10,38 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:background="@color/seeGreen"
         android:layout_alignParentBottom="true"
         >
 
         <ImageView
             android:id="@+id/homeLogo"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:layout_marginLeft="20dp"
             android:background="@drawable/baseline_home_24">
         </ImageView>
 
         <ImageView
             android:id="@+id/peoplepageLogo"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginLeft="35dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="45dp"
             android:background="@drawable/baseline_person_3_24">
         </ImageView>
         <ImageView
             android:id="@+id/donationPageLogo"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginLeft="35dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="45dp"
             android:background="@drawable/baseline_people_24">
         </ImageView>
         <ImageView
             android:id="@+id/settingsLogo"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginLeft="35dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="45dp"
             android:background="@drawable/baseline_admin_panel_settings_24">
         </ImageView>
     </LinearLayout>
@@ -49,7 +49,8 @@
     <androidx.appcompat.widget.SearchView
         android:id="@+id/seachLogo"
         android:layout_width="408dp"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
+        android:text="Search the distric"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_marginStart="3dp"
@@ -60,7 +61,7 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/Drecycleview"
-        android:layout_below="@id/seachLogo"
+        android:layout_below="@+id/seachLogo"
         android:layout_width="match_parent"
         android:layout_height="match_parent"></androidx.recyclerview.widget.RecyclerView>
 

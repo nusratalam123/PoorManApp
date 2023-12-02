@@ -29,6 +29,9 @@ android {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
+    buildFeatures{
+        viewBinding=true;
+    }
 }
 
 dependencies {
@@ -41,7 +44,9 @@ dependencies {
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
     implementation ("androidx.cardview:cardview:1.0.0")
     implementation("de.hdodenhof:circleimageview:3.1.0")
-
+// UddoktaPay SDK
+    implementation ("com.github.uddoktapay:UddoktaPayAndroidSDK:ultra.2.0")
+    implementation ("com.squareup.okhttp3:okhttp:5.0.0-alpha.2")
 
 
 }

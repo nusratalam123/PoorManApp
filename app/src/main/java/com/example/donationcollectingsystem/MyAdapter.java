@@ -1,6 +1,7 @@
 package com.example.donationcollectingsystem;
 
 import android.content.Context;
+import android.provider.Contacts;
 import android.text.Layout;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -30,7 +31,6 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MYViewHolder> {
 
     public MYViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View v= LayoutInflater.from(context).inflate(R.layout.peoplelist,parent,false);
-
         return new MYViewHolder(v);
     }
 

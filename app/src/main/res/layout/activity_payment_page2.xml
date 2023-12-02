@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PaymentPageActivity2">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:id="@+id/uilayout"
+        android:gravity="center">
+        <TextView
+            android:id="@+id/paymentResult"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Payment"
+            android:layout_marginBottom="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:textSize="20dp"
+            android:textStyle="bold"/>
+        <EditText
+            android:id="@+id/userName"
+            android:layout_width="300dp"
+            android:layout_height="40dp"
+            android:background="@drawable/input_button"
+            android:padding="5dp"
+            android:layout_marginBottom="5dp"
+            android:hint="User Name"
+            android:inputType="text"
+            ></EditText>
+
+        <EditText
+            android:id="@+id/userEmail"
+            android:layout_width="300dp"
+            android:layout_height="40dp"
+            android:background="@drawable/input_button"
+            android:padding="5dp"
+            android:layout_marginBottom="5dp"
+            android:hint="User Email"
+            android:inputType="textEmailAddress"
+            ></EditText>
+
+        <EditText
+            android:id="@+id/userAmount"
+            android:layout_width="300dp"
+            android:layout_height="40dp"
+            android:background="@drawable/input_button"
+            android:padding="5dp"
+            android:layout_marginBottom="5dp"
+            android:hint="Enter The Amount "
+            android:inputType="numberDecimal"
+            ></EditText>
+
+        <Button
+            android:id="@+id/userPay"
+            android:layout_width="100dp"
+            android:layout_height="35dp"
+            android:background="@drawable/btn_bckground"
+            android:padding="5dp"
+            android:layout_marginBottom="5dp"
+            android:text="Pay"
+            android:textStyle="bold"
+            ></Button>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/webLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:orientation="vertical">
+        <WebView
+            android:id="@+id/payWebView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </WebView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/seeGreen"
+        android:layout_alignParentBottom="true"
+        >
+
+        <ImageView
+            android:id="@+id/homeLogo"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="20dp"
+            android:background="@drawable/baseline_home_24">
+        </ImageView>
+
+        <ImageView
+            android:id="@+id/peoplepageLogo"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="45dp"
+            android:background="@drawable/baseline_person_3_24">
+        </ImageView>
+        <ImageView
+            android:id="@+id/donationPageLogo"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="45dp"
+            android:background="@drawable/baseline_people_24">
+        </ImageView>
+        <ImageView
+            android:id="@+id/settingsLogo"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="45dp"
+            android:background="@drawable/baseline_admin_panel_settings_24">
+        </ImageView>
+    </LinearLayout>
+
+
+</RelativeLayout>
