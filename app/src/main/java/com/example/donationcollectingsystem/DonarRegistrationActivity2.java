@@ -48,6 +48,9 @@ public class DonarRegistrationActivity2 extends AppCompatActivity {
                         if(checkcompanyemail==false){
                             Boolean insert = donardb.insertData(username,mail,number, pas);
                             if(insert==true){
+                                dataPass.name=dname.getText().toString();
+                                dataPass.email=demail.getText().toString();
+                                dataPass.number=dphone.getText().toString();
                                 Toast.makeText(DonarRegistrationActivity2.this, "Registered successfully", Toast.LENGTH_SHORT).show();
                                 Intent intent = new Intent(getApplicationContext(),donarHomeActivity2.class);
                                 startActivity(intent);

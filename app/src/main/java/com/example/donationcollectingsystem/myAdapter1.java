@@ -64,7 +64,7 @@ public class myAdapter1 extends RecyclerView.Adapter<myAdapter1.MyViewHolder> {
         notifyDataSetChanged();
     }
 
-    public class MyViewHolder extends RecyclerView.ViewHolder {
+    public static class MyViewHolder extends RecyclerView.ViewHolder {
         TextView name,distric,subDistric;
         Button payBtn;
         public MyViewHolder(@NonNull View itemView) {

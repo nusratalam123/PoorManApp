@@ -1,0 +1,14 @@
+package com.example.donationcollectingsystem;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Bundle;
+
+public class donarSendWantToPlaceListActivity2 extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_donar_send_want_to_place_list2);
+    }
+}

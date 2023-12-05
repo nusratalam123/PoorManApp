@@ -37,10 +37,18 @@ public class donarHomeActivity2 extends AppCompatActivity {
                 else{
                     Boolean checkuserpass = DB.checkMailandPass(companyemail, pass);
                     if(checkuserpass==true){
+                        if(donaremail.getText().toString().equals("govt123@gmail.com")&&password.getText().toString().equals("g123")){
+                            Intent intent  = new Intent(getApplicationContext(), adminHomeActivity2.class);
+                            intent.putExtra("email",companyemail);
+                            startActivity(intent);
+                            Toast.makeText(donarHomeActivity2.this, "admin Sign in successfull", Toast.LENGTH_SHORT).show();
+                        }
+                        else{
                         Intent intent  = new Intent(getApplicationContext(), donarMainHomePageActivity2.class);
                         intent.putExtra("email",companyemail);
                         startActivity(intent);
                         Toast.makeText(donarHomeActivity2.this, "Sign in successfull", Toast.LENGTH_SHORT).show();
+                        }
 
                     }else{
                         Toast.makeText(donarHomeActivity2.this, "Invalid Credentials", Toast.LENGTH_SHORT).show();

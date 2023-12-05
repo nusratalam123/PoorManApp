@@ -38,9 +38,6 @@ public class peopleHomeActivity2 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_people_home2);
         HomeLogo=(ImageView) findViewById(R.id.homeLogo);
-
-
-
         PeopleLogo=(ImageView) findViewById(R.id.peoplepageLogo);
         DonationPageLogo=(ImageView) findViewById(R.id.donationPageLogo);
         SettingLogo=(ImageView) findViewById(R.id.settingsLogo);

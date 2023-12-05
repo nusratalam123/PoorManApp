@@ -18,12 +18,14 @@ public class DBHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase MyDB) {
         MyDB.execSQL("create Table donar_table(name TEXT ,email TEXT primary key,mobile TEXT, password TEXT)");
+      //  MyDB.execSQL("create Table DonarsenderInfo(name TEXT ,email TEXT primary key,mobile TEXT,bank TEXT,ammount TEXT, date TEXT,district TEXT,thana TEXT)");
 
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase MyDB, int i, int i1) {
         MyDB.execSQL("drop Table if exists donar_table");
+       // MyDB.execSQL("drop Table if exists DonarsenderInfo");
 
     }
     public Boolean insertData(String name, String email,String number,String password){
@@ -38,6 +40,8 @@ public class DBHelper extends SQLiteOpenHelper {
         else
             return true;
     }
+
+
     public Boolean checkmail(String email) {
         SQLiteDatabase MyDB = this.getWritableDatabase();
         Cursor cursor = MyDB.rawQuery("Select * from donar_table where email = ?", new String[]{email});
@@ -46,6 +50,14 @@ public class DBHelper extends SQLiteOpenHelper {
         else
             return false;
     }
+//    public Boolean sendercheckmail(String email) {
+//        SQLiteDatabase MyDB = this.getWritableDatabase();
+//        Cursor cursor = MyDB.rawQuery("Select * from donar_table where email = ?", new String[]{email});
+//        if (cursor.getCount() > 0)
+//            return true;
+//        else
+//            return false;
+//    }
 
     public Boolean checkMailandPass(String email, String password){
         SQLiteDatabase MyDB = this.getWritableDatabase();
@@ -54,5 +66,11 @@ public class DBHelper extends SQLiteOpenHelper {
             return true;
         else
             return false;
+    }
+
+    public Cursor Donargetdata(){
+        SQLiteDatabase db=this.getWritableDatabase();
+        Cursor cursor=db.rawQuery("select *from donar_table",null);
+        return  cursor;
     }
 }
