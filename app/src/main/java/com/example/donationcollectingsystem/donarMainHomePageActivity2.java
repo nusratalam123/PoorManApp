@@ -208,11 +208,14 @@ public class donarMainHomePageActivity2 extends AppCompatActivity {
         govt_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                dataPass.distric=selectDis.toString();
+                dataPass.Thana=SubDisSpinner.getSelectedItem().toString();
+                dataPass.email=email.toString();
 
                 Toast.makeText(donarMainHomePageActivity2.this, "Selected State: "+selectDis+"\nSelected District: "+selectSubdis, Toast.LENGTH_LONG).show();
                 Intent intent1=new Intent(donarMainHomePageActivity2.this, GovtInformationActivity2.class);
-                intent1.putExtra("district",selectDis);
-                intent1.putExtra("subsidise",selectSubdis) ;
+                //intent1.putExtra("district",selectDis);
+                intent1.putExtra("thana",selectSubdis.toString()) ;
                 startActivity(intent1);
             }
         });

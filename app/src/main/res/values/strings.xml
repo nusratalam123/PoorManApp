@@ -5,6 +5,7 @@
     <string name="uper">Govt. Transaction Info</string>
     <string name="info">"Email:govt123@gmail.com \nBank-Account:SB-NNNNNNNNN \nPhone Number:01913378900"</string>
     <string name="rules">Rules:\n1.If you donate money then use a bank Account for long transction .\n2.Before transaction you must contact us.\n3.Provide your real data.\n4.please Dont cheat with us.\n5.Be careful about personal contact with any employee</string>
+    <string name="sendMoney">If you want to send money please fill the requied field and press the ok button</string>
 
     <string-array name="array_bd_distric">
 

@@ -26,7 +26,7 @@
                 android:textColor="@color/black">
             </TextView>
             <TextView
-                android:id="@+id/dLoginListName"
+                android:id="@+id/dListName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="10dp"
@@ -34,52 +34,50 @@
             </TextView>
 
         </LinearLayout>
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_gravity="center_vertical"
-                    >
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Email:"
-                        android:textSize="10dp"
-                        android:textColor="@color/black">
-                    </TextView>
-                    <TextView
-                        android:id="@+id/dLoginListMobileNumber"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="10dp"
-                        android:textColor="@color/black">
-                    </TextView>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center_vertical"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Email:"
+                android:textSize="10dp"
+                android:textColor="@color/black">
+            </TextView>
+            <TextView
+                android:id="@+id/dListEmail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="10dp"
+                android:textColor="@color/black">
+            </TextView>
 
-                </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center_vertical"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mobile Number:"
+                android:textSize="10dp"
+                android:textColor="@color/black">
+            </TextView>
+            <TextView
+                android:id="@+id/dListMobileNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="10dp"
+                android:textColor="@color/black">
+            </TextView>
 
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_gravity="center_vertical"
-                    >
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Mobile Number:"
-                        android:textSize="10dp"
-                        android:textColor="@color/black">
-                    </TextView>
-                    <TextView
-                        android:id="@+id/DLoginListMobileNumber"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="10dp"
-                        android:textColor="@color/black">
-                    </TextView>
-                </LinearLayout>
-
+        </LinearLayout>
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -94,7 +92,7 @@
                 android:textColor="@color/black">
             </TextView>
             <TextView
-                android:id="@+id/dLoginListPass"
+                android:id="@+id/dListpass"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="10dp"
@@ -102,28 +100,28 @@
             </TextView>
         </LinearLayout>
 
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_gravity="center_vertical"
-                    >
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center_vertical"
+            >
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Confirm Password:"
-                        android:textSize="10dp"
-                        android:textColor="@color/black">
-                    </TextView>
-                    <TextView
-                        android:id="@+id/dLoginListConPass"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="10dp"
-                        android:textColor="@color/black">
-                    </TextView>
-                </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Confirm Password:"
+                android:textSize="10dp"
+                android:textColor="@color/black">
+            </TextView>
+            <TextView
+                android:id="@+id/dListConPass"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="10dp"
+                android:textColor="@color/black">
+            </TextView>
+        </LinearLayout>
     </LinearLayout>
 
 </RelativeLayout>

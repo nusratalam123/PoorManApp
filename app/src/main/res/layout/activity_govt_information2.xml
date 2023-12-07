@@ -18,7 +18,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/uper"
-            android:textSize="40sp"
+            android:textSize="25sp"
             android:textStyle="bold"
             android:textColor="@color/black"
 
@@ -79,7 +79,7 @@
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
@@ -92,18 +92,16 @@
                 android:textColor="@color/black"
                 />
             <TextView
-                android:id="@+id/show_sub_govt_page"
+                android:id="@+id/showThanaName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="20sp"
                 android:textStyle="bold"
                 android:textColor="@color/black"
                 />
-
         </LinearLayout>
 
         <TextView
-
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/rules"
@@ -111,7 +109,43 @@
             android:textSize="20sp"
             android:textStyle="bold"
             android:textColor="@color/black"
+            />
+        <TextView
 
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/sendMoney"
+            android:layout_marginTop="10dp"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+
+            />
+
+        <EditText
+            android:id="@+id/bankAcNumber"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:hint="Bank Account Number"
+            android:textColorHint="@color/white"
+            android:padding="10dp"
+            android:textColor="#120202"
+            android:background="@drawable/input_button"
+           android:layout_margin="5dp"
+            />
+        <Button
+            android:id="@+id/okbtn"
+            android:text="Ok"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:layout_width="70dp"
+            android:layout_height="25dp"
+            android:background="@drawable/btn_bckground"
+            android:shadowColor="#A8A8A8"
+            android:shadowDx="0"
+            android:shadowDy="0"
+            android:shadowRadius="5"
+            android:layout_margin="5dp"
             />
 
     </LinearLayout>

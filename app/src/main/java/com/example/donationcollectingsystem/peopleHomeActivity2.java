@@ -46,9 +46,10 @@ public class peopleHomeActivity2 extends AppCompatActivity {
         name= new ArrayList<>();
         districName= new ArrayList<>();
         subDistricName= new ArrayList<>();
+        mobileNumber= new ArrayList<>();
         ArrayList<String> fliterlist=new ArrayList<>();
         recyclerView=findViewById(R.id.Drecycleview);
-        adapter=new myAdapter1(this,name,districName);
+        adapter=new myAdapter1(this,name,districName,mobileNumber);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         displayData();
@@ -73,7 +74,6 @@ public class peopleHomeActivity2 extends AppCompatActivity {
                 return true;
             }
         });
-
         HomeLogo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -114,7 +114,7 @@ public class peopleHomeActivity2 extends AppCompatActivity {
         else{
             while(cursor.moveToNext()){
                 name.add(cursor.getString(0));
-                //mobileNumber.add(cursor.getString(1));
+                mobileNumber.add(cursor.getString(1));
                // bkashNumber.add(cursor.getString(2));
                 districName.add(cursor.getString(4));
                 //subDistricName.add(cursor.getString(5));

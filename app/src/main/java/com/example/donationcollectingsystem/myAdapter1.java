@@ -20,11 +20,11 @@ public class myAdapter1 extends RecyclerView.Adapter<myAdapter1.MyViewHolder> {
 
     private Context context;
     private ArrayList name,mobile_number,bkash_number,distric,subDistric;
-    public myAdapter1(Context context , ArrayList name, ArrayList distric){
+    public myAdapter1(Context context , ArrayList name, ArrayList distric,ArrayList mobile_number){
         this.context = context;
         this.name = name;
         this.distric = distric;
-        this.subDistric=subDistric;
+        this.mobile_number=mobile_number;
 
     }
 
@@ -40,14 +40,19 @@ public class myAdapter1 extends RecyclerView.Adapter<myAdapter1.MyViewHolder> {
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
          holder.name.setText(String.valueOf(name.get(position)));
         holder.distric.setText(String.valueOf(distric.get(position)));
-        //holder.subDistric.setText(String.valueOf(subDistric.get(position)));
+        holder.mobile_Name.setText(String.valueOf(mobile_number.get(position)));
 
         holder.payBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                // Toast.makeText(context, "Button clicked", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(context, PaymentPageActivity2.class);
-                intent.putExtra("text", name);
+               String pname= name.get(holder.getAdapterPosition()).toString();
+               String pdistric= distric.get(holder.getAdapterPosition()).toString();
+               String pmobile= mobile_number.get(holder.getAdapterPosition()).toString();
+               paymentPassInfo.name=pname;
+                paymentPassInfo.distric=pdistric;
+                paymentPassInfo.mobile=pmobile;
                 context.startActivity(intent);
             }
         });
@@ -65,14 +70,14 @@ public class myAdapter1 extends RecyclerView.Adapter<myAdapter1.MyViewHolder> {
     }
 
     public static class MyViewHolder extends RecyclerView.ViewHolder {
-        TextView name,distric,subDistric;
+        TextView name,distric,subDistric,mobile_Name;
         Button payBtn;
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
 
             name=itemView.findViewById(R.id.dUserName);
             distric=itemView.findViewById(R.id.dUserDistric);
-           // subDistric=itemView.findViewById(R.id.dUsersubDistric);
+            mobile_Name=itemView.findViewById(R.id.dUserMobileNumber);
             payBtn=itemView.findViewById(R.id.pay_btn);
             payBtn.setEnabled(true);
 

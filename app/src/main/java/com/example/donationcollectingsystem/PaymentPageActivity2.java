@@ -10,6 +10,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.donationcollectingsystem.databinding.ActivityPaymentPage2Binding;
 import com.help5g.uddoktapaysdk.UddoktaPay;
@@ -47,6 +49,8 @@ public class PaymentPageActivity2 extends AppCompatActivity {
     private String storedMetaKey3;
     private String storedMetaValue3;
     private ActivityPaymentPage2Binding binding;
+    selfPaymentDatabase db;
+    TextView pName,pDistric,pmobile;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,6 +58,21 @@ public class PaymentPageActivity2 extends AppCompatActivity {
 
         binding=ActivityPaymentPage2Binding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        pName=findViewById(R.id.pUserName);
+        String PayName=paymentPassInfo.name;
+        pName.setText(PayName);
+        pDistric=findViewById(R.id.pUserDistric);
+        String Paydis=paymentPassInfo.distric;
+        pDistric.setText(Paydis);
+        pmobile=findViewById(R.id.pUserMobileNumber);
+        String Paymobile=paymentPassInfo.mobile;
+        pmobile.setText(Paymobile);
+        db = new selfPaymentDatabase(this);
+
+
+        //String Aname=(intent.getStringExtra("name"));
+        //Toast.makeText(PaymentPageActivity2.this, "name"+stroename, Toast.LENGTH_SHORT).show();
+
         binding.homeLogo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -103,8 +122,9 @@ public class PaymentPageActivity2 extends AppCompatActivity {
                 UddoktaPay.PaymentCallback paymentCallback = new UddoktaPay.PaymentCallback() {
                     @Override
                     public void onPaymentStatus(String status, String fullName, String email, String amount, String invoiceId,
-                                                String paymentMethod, String senderNumber, String transactionId,
+                                                String paymentMethod, String PayMobile, String transactionId,
                                                 String date, Map<String, String> metadataValues, String fee,String chargeAmount) {
+                        Intent intent=new Intent();
                         // Callback method triggered when the payment status is received from the payment gateway.
                         // It provides information about the payment transaction.
                         storedFullName = binding.userName.getText().toString();
@@ -112,7 +132,7 @@ public class PaymentPageActivity2 extends AppCompatActivity {
                         storedAmount = binding.userAmount.getText().toString();
                         storedInvoiceId = invoiceId;
                         storedPaymentMethod = paymentMethod;
-                        storedSenderNumber = senderNumber;
+                        storedSenderNumber=binding.pUserMobileNumber.getText().toString() ;
                         storedTransactionId = transactionId;
                         storedDate = date;
                         storedFee = fee;
@@ -148,9 +168,25 @@ public class PaymentPageActivity2 extends AppCompatActivity {
 
                                 // Update UI based on payment status
                                 if ("COMPLETED".equals(status)) {
+
+                                  //  Toast.makeText(PaymentPageActivity2.this, "name"+Aname, Toast.LENGTH_SHORT).show();
+                                    Boolean insert = db.insertPaymentData(PayName,Paydis,Paymobile,storedFullName,storedEmail,storedAmount, storedTransactionId,storedDate,storedPaymentMethod);
+                                    if(insert==true){
+                                        Toast.makeText(PaymentPageActivity2.this, "Data Insert successfuly", Toast.LENGTH_SHORT).show();
+                                        Intent intent = new Intent(getApplicationContext(),peopleLoginActivity2.class);
+                                        startActivity(intent);
+                                    }else{
+                                        Toast.makeText(PaymentPageActivity2.this, "Data Insert failed", Toast.LENGTH_SHORT).show();
+                                    }
                                     binding.uilayout.setVisibility(View.VISIBLE);
                                     binding.webLayout.setVisibility(View.GONE);
+
+
+
+
                                     binding.paymentResult.setText("payment status:"+"complete"+"\n"+"Name:"+storedFullName+"\n"+"Email:"+storedEmail+"\n"+"Amount:"+storedAmount);
+
+
                                 } else if ("PENDING".equals(status)) {
 
                                     binding.uilayout.setVisibility(View.VISIBLE);

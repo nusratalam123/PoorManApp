@@ -22,7 +22,7 @@
         ></TextView>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/drecycleview"
+        android:id="@+id/donarLoginCard"
         android:layout_below="@id/donarLogiTitle"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
