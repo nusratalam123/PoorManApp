@@ -36,11 +36,11 @@ public class adminHomeActivity2 extends AppCompatActivity {
         sendWantToPlace.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-               // Intent intent =new Intent(adminHomeActivity2.this,donarSendWantToPlaceListActivity2.class);
-               // startActivity(intent);
-
-                Intent intent =new Intent(adminHomeActivity2.this,donarSendingMoneyListActivity2.class);
+                Intent intent =new Intent(adminHomeActivity2.this,donarSendWantToPlaceListActivity2.class);
                 startActivity(intent);
+
+//                Intent intent =new Intent(adminHomeActivity2.this,donarSendingMoneyListActivity2.class);
+//                startActivity(intent);
             }
         });
         sendingMoney.setOnClickListener(new View.OnClickListener() {
@@ -53,7 +53,7 @@ public class adminHomeActivity2 extends AppCompatActivity {
         notification.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent =new Intent(adminHomeActivity2.this,notificationListActivity2.class);
+                Intent intent =new Intent(adminHomeActivity2.this,AfterSendingStoredInformationActivity2.class);
                 startActivity(intent);
             }
         });

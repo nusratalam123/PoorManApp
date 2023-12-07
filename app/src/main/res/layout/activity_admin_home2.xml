@@ -88,7 +88,7 @@
         />
     <Button
         android:id="@+id/donarSendNotification"
-        android:text="Send Notification"
+        android:text="After Sending money sender and reciever Info DataBase list "
         android:textColor="#FFFFFF"
         android:textSize="20sp"
         android:layout_width="match_parent"

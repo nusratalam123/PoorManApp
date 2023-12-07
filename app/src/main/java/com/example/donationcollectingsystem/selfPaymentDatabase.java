@@ -2,6 +2,7 @@ package com.example.donationcollectingsystem;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
@@ -41,6 +42,11 @@ public class selfPaymentDatabase extends SQLiteOpenHelper {
         if(result==-1) return false;
         else
             return true;
+    }
+    public Cursor getAfterStoredData(){
+        SQLiteDatabase db=this.getWritableDatabase();
+        Cursor cursor=db.rawQuery("select *from selfPayment",null);
+        return  cursor;
     }
 
 }

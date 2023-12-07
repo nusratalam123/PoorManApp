@@ -2,6 +2,7 @@ package com.example.donationcollectingsystem;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.DatabaseErrorHandler;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -34,6 +35,12 @@ public class responseDatabase extends SQLiteOpenHelper {
         if(result==-1) return false;
         else
             return true;
+    }
+
+    public Cursor responseListgetdata(){
+        SQLiteDatabase db=this.getWritableDatabase();
+        Cursor cursor=db.rawQuery("select *from responseTable",null);
+        return  cursor;
     }
 
 }
