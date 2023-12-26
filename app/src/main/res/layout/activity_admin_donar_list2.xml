@@ -3,27 +3,24 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     android:background="@drawable/login_background_color"
-    tools:context=".DonarUserListPageActivity2">
-
+    tools:context=".AdminDonarListActivity2">
 
     <TextView
-        android:id="@+id/donaradminTitle"
+        android:id="@+id/spageText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text=" Donar login info"
-        android:textColor="@color/white"
-        android:textStyle="bold"
+        android:text="Donar Login List"
         android:textSize="20dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
-        android:textAlignment="center"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:layout_marginLeft="70dp"
         ></TextView>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycleviewForDonarLogin"
-        android:layout_below="@+id/donaradminTitle"
+        android:id="@+id/DErecycleview"
+        android:layout_below="@id/spageText"
         android:layout_width="match_parent"
         android:layout_height="match_parent"></androidx.recyclerview.widget.RecyclerView>
 

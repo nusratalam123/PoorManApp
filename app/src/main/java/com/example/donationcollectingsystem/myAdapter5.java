@@ -11,31 +11,32 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
-public class donarAdapter extends RecyclerView.Adapter<donarAdapter.MyViewHolder> {
+public class myAdapter5  extends RecyclerView.Adapter<myAdapter5.MyViewHolder> {
+
     private Context context;
-    private ArrayList name,email,mobile_number,pass,confirm_pass;
-    public donarAdapter(Context context, ArrayList name, ArrayList email, ArrayList mobileNumber, ArrayList pass, ArrayList confirmPass) {
+    private ArrayList email,name,mobile,pass,Conpass;
+
+    public myAdapter5(Context context, ArrayList name, ArrayList email, ArrayList mobile, ArrayList pass) {
         this.context = context;
         this.name = name;
         this.email = email;
-        mobile_number = mobileNumber;
+        this.mobile = mobile;
         this.pass = pass;
-        confirm_pass = confirmPass;
     }
+
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View vi= LayoutInflater.from(context).inflate(R.layout.donarloginlist,parent,false);
-        return new MyViewHolder(vi);
+        View v= LayoutInflater.from(context).inflate(R.layout.peoplelist2,parent,false);
+        return new myAdapter5.MyViewHolder(v);
     }
+
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         holder.name.setText(String.valueOf(name.get(position)));
         holder.email.setText(String.valueOf(email.get(position)));
-        holder.mobileNumber.setText(String.valueOf(mobile_number.get(position)));
+        holder.mobileNumber.setText(String.valueOf(mobile.get(position)));
         holder.password.setText(String.valueOf(pass.get(position)));
-        holder.confirmPass.setText(String.valueOf(confirm_pass.get(position)));
-
     }
 
     @Override
@@ -43,15 +44,18 @@ public class donarAdapter extends RecyclerView.Adapter<donarAdapter.MyViewHolder
         return name.size();
     }
 
+
     public class MyViewHolder extends RecyclerView.ViewHolder {
         TextView name,email,mobileNumber,password,confirmPass;
-        public MyViewHolder(@NonNull View itemView) {
+        public MyViewHolder(View itemView) {
             super(itemView);
-            name=itemView.findViewById(R.id.dListName);
-            email=itemView.findViewById(R.id.dListEmail);
-            mobileNumber=itemView.findViewById(R.id.dListMobileNumber);
-            password=itemView.findViewById(R.id.dListpass);
-            confirmPass=itemView.findViewById(R.id.dListConPass);
+            // name=itemView.findViewById(R.id.userName);
+            //  email=itemView.findViewById(R.id.userDistric);
+            name=itemView.findViewById(R.id.SpecialName);
+            email=itemView.findViewById(R.id.SpecialEmail);
+            mobileNumber=itemView.findViewById(R.id.SpecialMobile);
+            password=itemView.findViewById(R.id.SpecialPass);
         }
     }
+
 }

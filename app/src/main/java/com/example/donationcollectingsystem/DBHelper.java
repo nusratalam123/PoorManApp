@@ -68,9 +68,9 @@ public class DBHelper extends SQLiteOpenHelper {
             return false;
     }
 
-    public Cursor Donargetdata(){
+    public Cursor getdata(){
         SQLiteDatabase db=this.getWritableDatabase();
-        Cursor cursor=db.rawQuery("select *from donar_table",null);
+        Cursor cursor=db.rawQuery("select * from donar_table",null);
         return  cursor;
     }
 }

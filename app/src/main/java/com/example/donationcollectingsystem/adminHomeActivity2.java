@@ -22,7 +22,7 @@ public class adminHomeActivity2 extends AppCompatActivity {
         donar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent =new Intent(adminHomeActivity2.this,DonarUserListPageActivity2.class);
+                Intent intent =new Intent(adminHomeActivity2.this,AdminDonarListActivity2.class);
                 startActivity(intent);
             }
         });
