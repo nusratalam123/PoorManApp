@@ -5,6 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
 import androidx.annotation.Nullable;
 
@@ -48,5 +49,18 @@ public class selfPaymentDatabase extends SQLiteOpenHelper {
         Cursor cursor=db.rawQuery("select *from selfPayment",null);
         return  cursor;
     }
+//    public Cursor getdata(String PEMAIL){
+//        SQLiteDatabase db=this.getWritableDatabase();
+//        String email=PEMAIL.toString();
+//        String query="select * from selfPayment where senderEmail="+email;
+//        Cursor cursor=db.rawQuery(query,null);
+//        return  cursor;
+//    }
 
+    public Cursor getdata(String pemail) {
+        SQLiteDatabase db=this.getWritableDatabase();
+        //String query="select * from selfPayment where senderEmail==pemail";
+        Cursor cursor = db.rawQuery("Select * from selfPayment where senderEmail = ?", new String[] {pemail});
+        return  cursor;
+    }
 }

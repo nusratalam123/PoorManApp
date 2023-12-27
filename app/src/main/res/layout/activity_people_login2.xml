@@ -1,70 +1,162 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:orientation="vertical"
     android:layout_height="match_parent"
     android:background="@drawable/login_background_color"
     tools:context=".peopleLoginActivity2">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/arraow"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="10dp"
+        android:src="@drawable/larroww" />
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/register_logo"
         android:layout_width="150dp"
         android:layout_height="150dp"
-        android:layout_marginTop="20dp"
         android:layout_marginLeft="110dp"
         android:layout_marginBottom="10dp"
         android:src="@drawable/android_image" />
     <TextView
-        android:id="@+id/donar_login_head"
+        android:id="@+id/people_hreader_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/register_logo"
-        android:text="People login"
+        android:text="@string/people_home_text"
         android:textColor="@color/white"
         android:textSize="20dp"
         android:layout_marginBottom="10dp"
         android:gravity="center"
         />
-    <EditText
-        android:id="@+id/people_name"
+    <TextView
+        android:id="@+id/people_header_text1"
         android:layout_width="match_parent"
-        android:layout_below="@id/donar_login_head"
-        android:layout_height="40dp"
-        android:layout_marginLeft="40dp"
-        android:layout_marginRight="40dp"
-        android:layout_marginBottom="10dp"
-        android:background="@drawable/input_button"
-        android:hint="Name"
-        android:padding="10dp"
-        android:textColor="#120202"
-        android:textColorHint="@color/white" />
-    <EditText
-        android:id="@+id/people_login_number"
-        android:layout_width="match_parent"
-        android:layout_below="@id/people_name"
-        android:layout_height="40dp"
-        android:layout_marginLeft="40dp"
-        android:layout_marginRight="40dp"
-        android:layout_marginBottom="10dp"
-        android:background="@drawable/input_button"
-        android:hint="Number"
-        android:padding="10dp"
-        android:textColor="#120202"
-        android:textColorHint="@color/white" />
-    <EditText
-        android:id="@+id/people_login_password"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_below="@id/people_login_number"
-        android:hint="Password"
-        android:textColorHint="@color/white"
-        android:padding="10dp"
-        android:textColor="#120202"
-        android:background="@drawable/input_button"
-        android:layout_marginBottom="10dp"
-        android:layout_marginLeft="40dp"
-        android:layout_marginRight="40dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/people_hreader_text"
+        android:text="People "
+        android:textColor="@color/white"
+        android:textSize="40dp"
+        android:textStyle="bold"
+        android:layout_marginBottom="20dp"
+        android:gravity="center"
         />
+
+    <TextView
+        android:id="@+id/people_header_text2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/people_hreader_text"
+        android:text="To Take help "
+        android:textColor="@color/white"
+        android:textSize="17dp"
+
+        android:gravity="center"
+        />
+    <TextView
+        android:id="@+id/people_header_text3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/people_hreader_text"
+        android:text="Sign in "
+        android:textColor="@color/white"
+        android:textSize="23dp"
+        android:layout_marginBottom="10dp"
+        android:gravity="center"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Name     :"
+            android:layout_marginLeft="10dp"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:textColor="@color/white" />
+        <EditText
+            android:id="@+id/people_name"
+            android:layout_width="265dp"
+            android:layout_below="@id/people_header_text1"
+            android:layout_height="40dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="40dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/input_button"
+            android:padding="10dp"
+            android:textColor="#120202"
+            android:textColorHint="@color/white" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/Pnumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Number  :"
+            android:layout_marginLeft="10dp"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:textColor="@color/white" />
+        <EditText
+            android:id="@+id/people_login_number"
+            android:layout_width="265dp"
+            android:layout_below="@id/people_name"
+            android:layout_height="40dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="40dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/input_button"
+            android:padding="10dp"
+            android:textColor="#120202"
+            android:textColorHint="@color/white" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/Ppassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@id/people_login_btn"
+        android:layout_marginTop="10dp"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Password:"
+            android:layout_marginLeft="10dp"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:textColor="@color/white" />
+        <EditText
+            android:id="@+id/people_login_password"
+            android:layout_width="265dp"
+            android:layout_height="40dp"
+            android:layout_below="@id/people_login_number"
+            android:textColorHint="@color/white"
+            android:padding="10dp"
+            android:textColor="#120202"
+            android:background="@drawable/input_button"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="40dp"
+            />
+    </LinearLayout>
+
+
     <Button
         android:id="@+id/people_login_btn"
         android:text="Login"
@@ -75,7 +167,7 @@
         android:layout_below="@id/people_login_password"
         android:background="@drawable/btn_bckground"
         android:shadowColor="#A8A8A8"
-        android:layout_marginLeft="50dp"
+        android:layout_marginLeft="120dp"
         android:shadowDx="0"
         android:shadowDy="0"
         android:shadowRadius="5"
@@ -87,6 +179,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_below="@id/people_login_btn"
+        android:layout_marginLeft="30dp"
         android:layout_marginTop="10dp"
         >
         <TextView
@@ -108,4 +201,4 @@
             android:textColor="@color/white" />
     </LinearLayout>
 
-</RelativeLayout>
+</LinearLayout>

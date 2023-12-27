@@ -1,4 +1,10 @@
 <resources>
+    <string name="home_text">Helping is great thing of spreading love and space.You can help people through this app.
+        You can take help also.Now your choice.</string>
+    <string name="people_home_text">Great you choose yourself as a</string>
+    <string name="people">People.</string>
+
+
     <string name="app_name">DonationCollecting system</string>
     <string name="select_Distric">Select Distric</string>
     <string name="select_subDistric">Select SubDistric</string>

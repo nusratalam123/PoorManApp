@@ -7,4 +7,7 @@
     <color name="Green">#32BC38</color>
     <color name="Orange">#F34913</color>
     <color name="darkGreen">#024C45</color>
+    <color name="gray">#8F8E8E</color>
+    <color name="loghtgray">#F5F0F0</color>
+    <color name="darkGreenn">#011702</color>
 </resources>

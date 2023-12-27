@@ -7,12 +7,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 public class peopleLoginActivity2 extends AppCompatActivity {
     EditText pmobile ,Ppass,pname;
     Button PeopleLogin;
+    ImageView arrow;
     TextView peopleReg;
     DBHelper1 DB;
 
@@ -20,6 +22,7 @@ public class peopleLoginActivity2 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_people_login2);
+        arrow=findViewById(R.id.arraow);
         peopleReg=findViewById(R.id.people_register);
         pname = (EditText) findViewById(R.id.people_name);
         pmobile = (EditText) findViewById(R.id.people_login_number);
@@ -27,6 +30,14 @@ public class peopleLoginActivity2 extends AppCompatActivity {
         PeopleLogin=(Button) findViewById(R.id.people_login_btn);
 
         DB = new DBHelper1(this);
+
+        arrow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent2=new Intent(peopleLoginActivity2.this, MainActivity.class);
+                startActivity(intent2);
+            }
+        });
 
         PeopleLogin.setOnClickListener(new View.OnClickListener() {
             @Override

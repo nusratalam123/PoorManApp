@@ -79,7 +79,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MYViewHolder> {
         return name.size();
     }
 
-    public class MYViewHolder extends RecyclerView.ViewHolder {
+    public static class MYViewHolder extends RecyclerView.ViewHolder {
         TextView name,mobile_number,bkash_number,distric,subDistric;
         Button peoplelistCard;
        // Dialog dialog;

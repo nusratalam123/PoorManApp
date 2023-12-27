@@ -1,11 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/login_background_color"
+    android:background="@color/gray"
+    android:orientation="vertical"
     tools:context=".donarHomeActivity2">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/arraow"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="10dp"
+        android:src="@drawable/larroww" />
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/register_logo"
@@ -20,12 +29,44 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/register_logo"
-        android:text="Donar login"
-        android:textColor="@color/white"
-        android:textSize="20dp"
+        android:text="Great You choose yourself as a "
+        android:textColor="@color/black"
+        android:textSize="22dp"
+        android:gravity="center"
+        />
+
+    <TextView
+        android:id="@+id/donar_login_head1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/donar_login_head"
+        android:text="Donar"
+        android:textColor="@color/black"
+        android:textSize="40dp"
+        android:textStyle="bold"
         android:layout_marginBottom="10dp"
         android:gravity="center"
         />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/register_logo"
+        android:text="To help the people "
+        android:textColor="@color/black"
+        android:textSize="22dp"
+        android:gravity="center"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/register_logo"
+        android:text="Sign In "
+        android:textColor="@color/black"
+        android:textSize="25dp"
+        android:gravity="center"
+        />
+
     <EditText
         android:id="@+id/donar_signin_email"
         android:layout_width="match_parent"
@@ -34,21 +75,22 @@
         android:layout_marginLeft="40dp"
         android:layout_marginRight="40dp"
         android:layout_marginBottom="10dp"
-        android:background="@drawable/input_button"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/whitebtnborder"
         android:hint="Email or Company Email"
         android:padding="10dp"
         android:textColor="#120202"
-        android:textColorHint="@color/white" />
+        android:textColorHint="@color/black" />
     <EditText
         android:id="@+id/donar_signin_password"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:layout_below="@id/donar_signin_email"
         android:hint="Password"
-        android:textColorHint="@color/white"
+        android:textColorHint="@color/black"
         android:padding="10dp"
         android:textColor="#120202"
-        android:background="@drawable/input_button"
+        android:background="@drawable/whitebtnborder"
         android:layout_marginBottom="10dp"
         android:layout_marginLeft="40dp"
         android:layout_marginRight="40dp"
@@ -56,14 +98,14 @@
     <Button
         android:id="@+id/donar_Signin_btn"
         android:text="Login"
-        android:textColor="#FFFFFF"
+        android:textColor="@color/black"
         android:textSize="20sp"
         android:layout_width="150dp"
         android:layout_height="40dp"
         android:layout_below="@id/donar_signin_password"
-        android:background="@drawable/btn_bckground"
+        android:background="@drawable/white_btn"
         android:shadowColor="#A8A8A8"
-        android:layout_marginLeft="50dp"
+        android:layout_marginLeft="120dp"
         android:shadowDx="0"
         android:shadowDy="0"
         android:shadowRadius="5"
@@ -85,7 +127,7 @@
             android:layout_marginLeft="40dp"
             android:textSize="15sp"
             android:textStyle="bold"
-            android:textColor="@color/white" />
+            android:textColor="@color/black" />
         <TextView
             android:id="@+id/donar_register"
             android:layout_width="wrap_content"
@@ -93,7 +135,7 @@
             android:text="Register"
             android:textSize="17sp"
             android:textStyle="bold"
-            android:textColor="@color/white" />
+            android:textColor="@color/black" />
     </LinearLayout>
 
-</RelativeLayout>
+</LinearLayout>
