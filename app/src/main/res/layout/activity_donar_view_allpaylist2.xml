@@ -1,30 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     android:orientation="vertical"
+    android:id="@+id/drawer_layout"
     android:background="@color/gray"
     tools:context=".donarViewAllpaylistActivity2">
 
-    <TextView
-        android:id="@+id/alllistheaderEmail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:text="All pay list"
-        android:layout_marginLeft="10dp"
-        android:layout_marginBottom="2dp"
-        android:textSize="25dp"
-        android:textStyle="bold"
-        android:textColor="@color/black" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/Dpayrecycleview"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"></androidx.recyclerview.widget.RecyclerView>
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+        <include
+            layout="@layout/toolbar"
+            ></include>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="people page"
+            android:textSize="20dp"
+            >
+        </TextView>
 
+<!--        <TextView-->
+<!--            android:id="@+id/alllistheaderEmail"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="5dp"-->
+<!--            android:text="All pay list"-->
+<!--            android:layout_marginLeft="10dp"-->
+<!--            android:layout_marginBottom="2dp"-->
+<!--            android:textSize="25dp"-->
+<!--            android:textStyle="bold"-->
+<!--            android:textColor="@color/black" />-->
 
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/Dpayrecycleview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"></androidx.recyclerview.widget.RecyclerView>
 
-</LinearLayout>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        >
+        <include
+
+            layout="@layout/donarnavbar"></include>
+    </RelativeLayout>
+</androidx.drawerlayout.widget.DrawerLayout>

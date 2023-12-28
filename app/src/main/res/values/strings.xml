@@ -4,6 +4,9 @@
     <string name="people_home_text">Great you choose yourself as a</string>
     <string name="people">People.</string>
 
+    <string name="open_nav">Open Navigation Drawer</string>
+    <string name="close_nav">Close Navigation Drawer</string>
+
 
     <string name="app_name">DonationCollecting system</string>
     <string name="select_Distric">Select Distric</string>

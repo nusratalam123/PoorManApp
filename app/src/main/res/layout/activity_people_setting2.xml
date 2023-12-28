@@ -5,35 +5,37 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/drawer_layout"
-    tools:context=".afterLoginPeopleHomePageActivity2">
+    android:fitsSystemWindows="true"
+    tools:openDrawer="start"
+    tools:context=".peopleSettingActivity2">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        >
+        android:orientation="vertical">
         <include
             layout="@layout/toolbar"
             ></include>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="people page"
+            android:text="setting page"
             android:textSize="20dp"
-           >
+            android:layout_gravity="center">
+
         </TextView>
     </LinearLayout>
+
     <RelativeLayout
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_gravity="start"
-       >
+        android:background="@color/white"
+        android:gravity="start">
         <include
+            layout="@layout/nav_drawer"
+            ></include>
 
-            layout="@layout/nav_drawer"></include>
     </RelativeLayout>
-
-
 
 
 </androidx.drawerlayout.widget.DrawerLayout>
