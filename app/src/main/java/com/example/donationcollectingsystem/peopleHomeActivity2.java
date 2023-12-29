@@ -24,9 +24,9 @@ import java.util.ArrayList;
 import java.util.Locale;
 
 public class peopleHomeActivity2 extends AppCompatActivity {
-     TextView peopleReg;
-     DBHelper1 db;
-     ImageView HomeLogo,DonationPageLogo,PeopleLogo,SettingLogo;
+    TextView peopleReg;
+    DBHelper1 db;
+    ImageView HomeLogo,DonationPageLogo,PeopleLogo,SettingLogo;
     RecyclerView recyclerView;
     ArrayList<String> name,mobileNumber,bkashNumber,districName,subDistricName;
     myAdapter1 adapter;
@@ -37,7 +37,6 @@ public class peopleHomeActivity2 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_people_home2);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         HomeLogo=(ImageView) findViewById(R.id.homeLogo);
         PeopleLogo=(ImageView) findViewById(R.id.peoplepageLogo);
         DonationPageLogo=(ImageView) findViewById(R.id.donationPageLogo);
@@ -116,7 +115,7 @@ public class peopleHomeActivity2 extends AppCompatActivity {
             while(cursor.moveToNext()){
                 name.add(cursor.getString(0));
                 mobileNumber.add(cursor.getString(1));
-               // bkashNumber.add(cursor.getString(2));
+                // bkashNumber.add(cursor.getString(2));
                 districName.add(cursor.getString(4));
                 //subDistricName.add(cursor.getString(5));
             }

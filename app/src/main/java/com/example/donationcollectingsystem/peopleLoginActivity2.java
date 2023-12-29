@@ -53,8 +53,9 @@ public class peopleLoginActivity2 extends AppCompatActivity {
                     Boolean checkMobileandPass = DB.checkMobileandPass(Pname,Peoplemobile, peoplepas);
                     if(checkMobileandPass==true){
                         Toast.makeText(peopleLoginActivity2.this, "Sign in successfull", Toast.LENGTH_SHORT).show();
-                      //  Intent intent1=new Intent(peopleLoginActivity2.this, AllPeopledInformationActivity2.class);
-                        Intent intent1=new Intent(peopleLoginActivity2.this, afterLoginPeopleHomePageActivity2.class);
+                        Intent intent1=new Intent(peopleLoginActivity2.this, AllPeopledInformationActivity2.class);
+                       //   Intent intent1=new Intent(peopleLoginActivity2.this, peopleHomeActivity2.class);
+                       // Intent intent1=new Intent(peopleLoginActivity2.this, afterLoginPeopleHomePageActivity2.class);
 
                         intent1.putExtra("name",Pname);
                         startActivity(intent1);
