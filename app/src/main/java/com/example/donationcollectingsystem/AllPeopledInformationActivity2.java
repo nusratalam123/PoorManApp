@@ -1,11 +1,18 @@
 package com.example.donationcollectingsystem;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -17,13 +24,16 @@ public class AllPeopledInformationActivity2 extends AppCompatActivity {
     ArrayList<String> name,mobileNumber,bkashNumber,districName,subDistricName;
     MyAdapter adapter;
     TextView peoplename;
+    private DrawerLayout drawerLayout;
+    ImageView menu;
+    LinearLayout homeimg,settingimg,doublepeopleimg;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_all_peopled_information2);
-        peoplename=findViewById(R.id.people_nick_name);
-        String Pname= getIntent().getStringExtra("name");
-        peoplename.setText(Pname);
+//        peoplename=findViewById(R.id.people_nick_name);
+//        String Pname= getIntent().getStringExtra("name");
+//        peoplename.setText(Pname);
         db=new DBHelper1(this);
         name= new ArrayList<>();
         mobileNumber= new ArrayList<>();
@@ -35,6 +45,35 @@ public class AllPeopledInformationActivity2 extends AppCompatActivity {
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         displayData();
+
+        //drawer section
+        drawerLayout = findViewById(R.id.people_drawer_layout1);
+        menu=findViewById(R.id.menu);
+        homeimg = findViewById(R.id.drawerHome);
+        //homeimg = findViewById(R.id.DrawerhomeLogo);
+        doublepeopleimg = findViewById(R.id.drawerProfile);
+        settingimg = findViewById(R.id.drawerSetting);
+        menu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openDrawer(drawerLayout);
+            }
+        });
+
+        homeimg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                recreate();
+                // redirectActivity(afterLoginPeopleHomePageActivity2.this,peopleLoginActivity2.class);
+            }
+        });
+
+        settingimg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                redirectActivity(AllPeopledInformationActivity2.this,peopleSettingActivity2.class);
+            }
+        });
     }
 
     private  void displayData(){
@@ -53,4 +92,24 @@ public class AllPeopledInformationActivity2 extends AppCompatActivity {
             }
         }
     }
+
+    public  static void openDrawer( DrawerLayout drawerLayout) {
+        drawerLayout.openDrawer(GravityCompat.START);
+    }
+    public static void  closeDrawer( DrawerLayout drawerLayout) {
+        if( drawerLayout.isDrawerOpen(GravityCompat.START)) {
+            drawerLayout.closeDrawer(GravityCompat.START);
+        }
+    }
+    public static void  redirectActivity(Activity activity, Class secondActivity) {
+        Intent intent=new Intent(activity, secondActivity);
+        activity.startActivity(intent);
+        activity.finish();
+    }
+    protected  void onPause(){
+        super.onPause();
+        closeDrawer(drawerLayout);
+    }
+
 }
+

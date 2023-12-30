@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/drawer_layout"
+    android:id="@+id/helperPeopleDrawer"
+    android:background="@color/Orange"
     tools:context=".afterLoginPeopleHomePageActivity2">
 
     <LinearLayout
@@ -18,10 +19,17 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="people page"
+            android:layout_gravity="center"
+            android:text="Surounding All People"
             android:textSize="20dp"
-           >
+            >
         </TextView>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/helperPeoplerecycleview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        </androidx.recyclerview.widget.RecyclerView>
     </LinearLayout>
     <RelativeLayout
         android:layout_width="300dp"
@@ -30,7 +38,7 @@
        >
         <include
 
-            layout="@layout/nav_drawer"></include>
+            layout="@layout/peoplenavdrawer"></include>
     </RelativeLayout>
 
 

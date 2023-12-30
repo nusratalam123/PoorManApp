@@ -6,19 +6,31 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
 
+import java.util.ArrayList;
+
 public class afterLoginPeopleHomePageActivity2 extends AppCompatActivity  {
+
+    DBHelper1 db;
+    RecyclerView recyclerView;
+    ArrayList<String> name,mobileNumber,bkashNumber,districName,subDistricName;
+    MyAdapter adapter;
+    TextView peoplename;
     private DrawerLayout drawerLayout;
     ImageView menu;
     LinearLayout homeimg,settingimg,doublepeopleimg;
@@ -26,7 +38,19 @@ public class afterLoginPeopleHomePageActivity2 extends AppCompatActivity  {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_after_login_people_home_page2);
-        drawerLayout = findViewById(R.id.drawer_layout);
+
+        db=new DBHelper1(this);
+        name= new ArrayList<>();
+        mobileNumber= new ArrayList<>();
+        bkashNumber= new ArrayList<>();
+        districName= new ArrayList<>();
+        subDistricName= new ArrayList<>();
+        recyclerView=findViewById(R.id.helperPeoplerecycleview);
+        adapter=new MyAdapter(this,name,mobileNumber,bkashNumber,districName,subDistricName);
+        recyclerView.setAdapter(adapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        displayData();
+        drawerLayout = findViewById(R.id.helperPeopleDrawer);
         menu=findViewById(R.id.menu);
         homeimg = findViewById(R.id.drawerHome);
         //homeimg = findViewById(R.id.DrawerhomeLogo);
@@ -54,6 +78,24 @@ public class afterLoginPeopleHomePageActivity2 extends AppCompatActivity  {
             }
         });
     }
+
+    private  void displayData(){
+        Cursor cursor=db.getdata();
+        if(cursor.getCount()==0){
+            Toast.makeText(afterLoginPeopleHomePageActivity2.this,"No Entry Exsist",Toast.LENGTH_SHORT).show();
+            return;
+        }
+        else{
+            while(cursor.moveToNext()){
+                name.add(cursor.getString(0));
+                mobileNumber.add(cursor.getString(1));
+                bkashNumber.add(cursor.getString(3));
+                districName.add(cursor.getString(4));
+                subDistricName.add(cursor.getString(5));
+            }
+        }
+    }
+
 
     public  static void openDrawer( DrawerLayout drawerLayout) {
         drawerLayout.openDrawer(GravityCompat.START);

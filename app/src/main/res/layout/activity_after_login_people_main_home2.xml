@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/Orange"
+    tools:context=".afterLoginPeopleMainHomeActivity2">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/purple_200"
+        >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/helperPeoplePagearraow"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginTop="0dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="5dp"
+            android:src="@drawable/larroww" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/register_logo"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="10dp"
+            android:src="@drawable/peopleiconnn" />
+        <TextView
+            android:id="@+id/helperPeopleLoginName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="10dp"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:textColor="@color/white" />
+
+        <TextView
+            android:id="@+id/helperPeoplelogoutBtn"
+            android:layout_width="match_parent"
+            android:layout_height="23dp"
+            android:layout_marginTop="20dp"
+            android:gravity="right"
+            android:layout_marginRight="10dp"
+            android:text="Logout"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+
+    </LinearLayout>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Welcome"
+        android:layout_marginLeft="20dp"
+        android:textSize="40dp"
+        android:textStyle="bold"
+        android:textColor="@color/white" />
+    <TextView
+        android:id="@+id/helperPeopleLoginNameTwo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:textColor="@color/white" />
+
+    <TextView
+        android:id="@+id/helperPeopleLoginName2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Find your neighbors...."
+        android:layout_marginLeft="20dp"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@color/white" />
+
+    <LinearLayout
+        android:id="@+id/Pnumber"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:background="@drawable/whitebtnborder"
+        android:layout_margin="10dp"
+        >
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="11dp"
+            android:text="Surrounding People..."
+            android:layout_marginLeft="20dp"
+            android:layout_marginBottom="5dp"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:textColor="@color/white" />
+        <ImageView
+            android:id="@+id/surroundingAllpeople"
+            android:layout_width="100dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/rarroww"
+            >
+        </ImageView>
+    </LinearLayout>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="10dp"
+        >
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="Receving History"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="5dp"
+            android:textSize="25dp"
+            android:textStyle="bold"
+            android:textColor="@color/black" />
+        <Button
+            android:id="@+id/viewAllReceiveMoneyhistoryList"
+            android:text="View All"
+            android:textColor="@color/black"
+            android:textSize="12dp"
+            android:layout_width="110dp"
+            android:layout_height="35dp"
+            android:layout_below="@id/people_login_password"
+            android:background="@drawable/white_btn"
+            android:shadowColor="#A8A8A8"
+            android:layout_marginLeft="20dp"
+
+            android:shadowDx="0"
+            android:shadowDy="0"
+            android:shadowRadius="5"
+            android:layout_marginBottom="5dp"
+            />
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/Dpayrecycleviewlist"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></androidx.recyclerview.widget.RecyclerView>
+
+
+
+</LinearLayout>
