@@ -63,4 +63,10 @@ public class selfPaymentDatabase extends SQLiteOpenHelper {
         Cursor cursor = db.rawQuery("Select * from selfPayment where senderEmail = ?", new String[] {pemail});
         return  cursor;
     }
+    public Cursor historygetdata(String pname) {
+        SQLiteDatabase db=this.getWritableDatabase();
+        //String query="select * from selfPayment where senderEmail==pemail";
+        Cursor cursor = db.rawQuery("Select * from selfPayment where name = ?", new String[] {pname});
+        return  cursor;
+    }
 }
