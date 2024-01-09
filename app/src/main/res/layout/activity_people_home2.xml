@@ -1,69 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<androidx.drawerlayout.widget.DrawerLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="@drawable/login_background_color"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:id="@+id/drawer_layout"
+    android:background="@color/gray"
     tools:context=".peopleHomeActivity2">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:background="@color/seeGreen"
-        android:layout_alignParentBottom="true"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
         >
+        <include
+            layout="@layout/toolbar"
+            ></include>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="All people List"
+            android:textSize="20dp"
+            android:textColor="@color/black"
+            android:layout_marginLeft="60dp"
+            >
+        </TextView>
 
-        <ImageView
-            android:id="@+id/homeLogo"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginLeft="20dp"
-            android:background="@drawable/baseline_home_24">
-        </ImageView>
+        <!--        <TextView-->
+        <!--            android:id="@+id/alllistheaderEmail"-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_marginTop="5dp"-->
+        <!--            android:text="All pay list"-->
+        <!--            android:layout_marginLeft="10dp"-->
+        <!--            android:layout_marginBottom="2dp"-->
+        <!--            android:textSize="25dp"-->
+        <!--            android:textStyle="bold"-->
+        <!--            android:textColor="@color/black" />-->
 
-        <ImageView
-            android:id="@+id/peoplepageLogo"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginLeft="45dp"
-            android:background="@drawable/baseline_person_3_24">
-        </ImageView>
-        <ImageView
-            android:id="@+id/donationPageLogo"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginLeft="45dp"
-            android:background="@drawable/baseline_people_24">
-        </ImageView>
-        <ImageView
-            android:id="@+id/settingsLogo"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginLeft="45dp"
-            android:background="@drawable/baseline_admin_panel_settings_24">
-        </ImageView>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/Drecycleview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"></androidx.recyclerview.widget.RecyclerView>
+
     </LinearLayout>
 
-    <androidx.appcompat.widget.SearchView
-        android:id="@+id/seachLogo"
-        android:layout_width="408dp"
-        android:layout_height="40dp"
-        android:text="Search the distric"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="3dp"
-        android:layout_marginEnd="0dp"
-        android:background="@drawable/btn_bckground">
+    <RelativeLayout
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        >
+        <include
 
-    </androidx.appcompat.widget.SearchView>
+            layout="@layout/donarnavbar"></include>
+    </RelativeLayout>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/Drecycleview"
-        android:layout_below="@+id/seachLogo"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"></androidx.recyclerview.widget.RecyclerView>
-
-
-</RelativeLayout>
+</androidx.drawerlayout.widget.DrawerLayout>

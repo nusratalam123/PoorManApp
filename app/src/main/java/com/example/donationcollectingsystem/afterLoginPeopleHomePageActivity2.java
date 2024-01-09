@@ -33,7 +33,7 @@ public class afterLoginPeopleHomePageActivity2 extends AppCompatActivity  {
     TextView peoplename;
     private DrawerLayout drawerLayout;
     ImageView menu;
-    LinearLayout homeimg,settingimg,doublepeopleimg;
+    LinearLayout homeimg,settingimg,doublepeopleimg, donarPage, peoplePage,logout,profile;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,10 +52,15 @@ public class afterLoginPeopleHomePageActivity2 extends AppCompatActivity  {
         displayData();
         drawerLayout = findViewById(R.id.helperPeopleDrawer);
         menu=findViewById(R.id.menu);
+        //homeimg = findViewById(R.id.DrawerhomeLogo);
+        settingimg = findViewById(R.id.drawerSetting);
         homeimg = findViewById(R.id.drawerHome);
         //homeimg = findViewById(R.id.DrawerhomeLogo);
-        doublepeopleimg = findViewById(R.id.drawerProfile);
-        settingimg = findViewById(R.id.drawerSetting);
+        profile = findViewById(R.id.drawerProfile);
+        donarPage = findViewById(R.id.drawerDonar);
+        peoplePage = findViewById(R.id.drawerPeoplePage);
+        logout = findViewById(R.id.drawerlogout);
+
         menu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -66,15 +71,39 @@ public class afterLoginPeopleHomePageActivity2 extends AppCompatActivity  {
         homeimg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                recreate();
-              // redirectActivity(afterLoginPeopleHomePageActivity2.this,peopleLoginActivity2.class);
+              //  recreate();
+               redirectActivity(afterLoginPeopleHomePageActivity2.this,MainActivity.class);
             }
         });
 
         settingimg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                redirectActivity(afterLoginPeopleHomePageActivity2.this,peopleSettingActivity2.class);
+                //redirectActivity(afterLoginPeopleHomePageActivity2.this,peopleSettingActivity2.class);
+                redirectActivity(afterLoginPeopleHomePageActivity2.this,SettingPageActivity2.class);
+            }
+        });
+
+        donarPage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //redirectActivity(afterLoginPeopleHomePageActivity2.this,peopleSettingActivity2.class);
+                redirectActivity(afterLoginPeopleHomePageActivity2.this,donarHomeActivity2.class);
+            }
+        });
+
+        peoplePage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //redirectActivity(afterLoginPeopleHomePageActivity2.this,peopleSettingActivity2.class);
+                redirectActivity(afterLoginPeopleHomePageActivity2.this, peopleLoginActivity2.class);
+            }
+        });
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //redirectActivity(afterLoginPeopleHomePageActivity2.this,peopleSettingActivity2.class);
+                redirectActivity(afterLoginPeopleHomePageActivity2.this, MainActivity.class);
             }
         });
     }

@@ -2,9 +2,12 @@ package com.example.donationcollectingsystem;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
@@ -14,6 +17,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -33,14 +37,15 @@ public class peopleHomeActivity2 extends AppCompatActivity {
     TextView peoplename;
     SearchView searchView;
     Button payBtn;
+
+    private DrawerLayout drawerLayout;
+    ImageView menu;
+    LinearLayout homeimg,settingimg,doublepeopleimg,dddonarPage,ddlogout,ddpeople;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_people_home2);
-        HomeLogo=(ImageView) findViewById(R.id.homeLogo);
-        PeopleLogo=(ImageView) findViewById(R.id.peoplepageLogo);
-        DonationPageLogo=(ImageView) findViewById(R.id.donationPageLogo);
-        SettingLogo=(ImageView) findViewById(R.id.settingsLogo);
+
         //adapter data
         db=new DBHelper1(this);
         name= new ArrayList<>();
@@ -53,55 +58,78 @@ public class peopleHomeActivity2 extends AppCompatActivity {
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         displayData();
-        searchView=findViewById(R.id.seachLogo);
-        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-            @Override
-            public boolean onQueryTextSubmit(String query) {
-                return false;
-            }
+       // searchView=findViewById(R.id.seachLogo);
+//        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+//            @Override
+//            public boolean onQueryTextSubmit(String query) {
+//                return false;
+//            }
+//
+//            @Override
+//            public boolean onQueryTextChange(String newText) {
+//                ArrayList<String> searchlist=new ArrayList<>();
+//                for(String  people:districName){
+//                    if(people.toLowerCase().contains(newText.toLowerCase())){
+//                        searchlist.add(people);
+//                        Toast.makeText(peopleHomeActivity2.this,"There exist",Toast.LENGTH_SHORT).show();
+//
+//                    }
+//                }
+//                adapter.setAdapter(searchlist);
+//                return true;
+//            }
+//        });
 
+        drawerLayout = findViewById(R.id.drawer_layout);
+        menu=findViewById(R.id.menu);
+        homeimg = findViewById(R.id.ddrawerHome);
+        //homeimg = findViewById(R.id.DrawerhomeLogo);
+        doublepeopleimg = findViewById(R.id.ddrawerProfile);
+        settingimg = findViewById(R.id.ddrawerSetting);
+        dddonarPage = findViewById(R.id.ddrawerDonar);
+        ddpeople = findViewById(R.id.ddrawerPeople);
+        ddlogout = findViewById(R.id.ddrawerLogout);
+        menu.setOnClickListener(new View.OnClickListener() {
             @Override
-            public boolean onQueryTextChange(String newText) {
-                ArrayList<String> searchlist=new ArrayList<>();
-                for(String  people:districName){
-                    if(people.toLowerCase().contains(newText.toLowerCase())){
-                        searchlist.add(people);
-                        Toast.makeText(peopleHomeActivity2.this,"There exist",Toast.LENGTH_SHORT).show();
+            public void onClick(View view) {
+                openDrawer(drawerLayout);
+            }
+        });
 
-                    }
-                }
-                adapter.setAdapter(searchlist);
-                return true;
-            }
-        });
-        HomeLogo.setOnClickListener(new View.OnClickListener() {
+        homeimg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent =new Intent(peopleHomeActivity2.this,MainActivity.class);
-                startActivity(intent);
+             //   recreate();
+                 redirectActivity(peopleHomeActivity2.this,MainActivity.class);
             }
         });
-        PeopleLogo.setOnClickListener(new View.OnClickListener() {
+
+        settingimg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent =new Intent(peopleHomeActivity2.this,peopleLoginActivity2.class);
-                startActivity(intent);
+                redirectActivity(peopleHomeActivity2.this,SettingPageActivity2.class);
             }
         });
-        DonationPageLogo.setOnClickListener(new View.OnClickListener() {
+        dddonarPage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent =new Intent(peopleHomeActivity2.this,donarHomeActivity2.class);
-                startActivity(intent);
+                redirectActivity(peopleHomeActivity2.this,donarHomeActivity2.class);
             }
         });
-        SettingLogo.setOnClickListener(new View.OnClickListener() {
+        ddpeople.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent =new Intent(peopleHomeActivity2.this,MainActivity.class);
-                startActivity(intent);
+                redirectActivity(peopleHomeActivity2.this, peopleLoginActivity2.class);
             }
         });
+        ddlogout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                redirectActivity(peopleHomeActivity2.this,MainActivity.class);
+            }
+        });
+
+
     }
 
 
@@ -120,5 +148,23 @@ public class peopleHomeActivity2 extends AppCompatActivity {
                 //subDistricName.add(cursor.getString(5));
             }
         }
+    }
+  //drawer
+    public  static void openDrawer( DrawerLayout drawerLayout) {
+        drawerLayout.openDrawer(GravityCompat.START);
+    }
+    public static void  closeDrawer( DrawerLayout drawerLayout) {
+        if( drawerLayout.isDrawerOpen(GravityCompat.START)) {
+            drawerLayout.closeDrawer(GravityCompat.START);
+        }
+    }
+    public static void  redirectActivity(Activity activity, Class secondActivity) {
+        Intent intent=new Intent(activity, secondActivity);
+        activity.startActivity(intent);
+        activity.finish();
+    }
+    protected  void onPause(){
+        super.onPause();
+        closeDrawer(drawerLayout);
     }
 }

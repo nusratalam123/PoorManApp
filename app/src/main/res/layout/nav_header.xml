@@ -17,15 +17,17 @@
         android:layout_marginBottom="10dp"
         android:src="@drawable/peopleiconnn" />
     <TextView
+        android:id="@+id/navHeaderName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Android Knowledge"
+        android:text="Poor Man App"
         android:textColor="@color/white"
         android:textStyle="bold"/>
     <TextView
+        android:id="@+id/navHeaderEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="contact@androidknowledge.com"
+        android:text="PoorMan975@gmail.com"
         android:textColor="@color/white"
         android:textSize="14sp"
         android:layout_marginBottom="16dp"/>

@@ -4,81 +4,92 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/gray"
     tools:context=".PaymentPageActivity2">
 
-    <LinearLayout
-        android:id="@+id/Incard"
-        android:layout_width="234dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:orientation="vertical">
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/payPagearraow"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="5dp"
+        android:src="@drawable/larroww" />
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:orientation="horizontal">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Name:"
-                android:textColor="@color/black"
-                android:textSize="15dp"></TextView>
+    <!--    <LinearLayout-->
+<!--        android:id="@+id/Incard"-->
+<!--        android:layout_width="234dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginLeft="10dp"-->
+<!--        android:orientation="vertical">-->
 
-            <TextView
-                android:id="@+id/pUserName"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/black"
-                android:textSize="15dp"></TextView>
+<!--        <LinearLayout-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_gravity="center_vertical"-->
+<!--            android:orientation="horizontal">-->
 
-        </LinearLayout>
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="Name:"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:textSize="15dp"></TextView>-->
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="top"
-            android:orientation="horizontal">
+<!--            <TextView-->
+<!--                android:id="@+id/pUserName"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:textSize="15dp"></TextView>-->
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Distric:"
-                android:textColor="@color/black"
+<!--        </LinearLayout>-->
 
-                android:textSize="15dp"></TextView>
+<!--        <LinearLayout-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_gravity="top"-->
+<!--            android:orientation="horizontal">-->
 
-            <TextView
-                android:id="@+id/pUserDistric"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/black"
-                android:textSize="15dp"></TextView>
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="top"
-            android:orientation="horizontal">
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="Distric:"-->
+<!--                android:textColor="@color/black"-->
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Mobile Number:"
-                android:textColor="@color/black"
+<!--                android:textSize="15dp"></TextView>-->
 
-                android:textSize="15dp"></TextView>
+<!--            <TextView-->
+<!--                android:id="@+id/pUserDistric"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:textSize="15dp"></TextView>-->
+<!--        </LinearLayout>-->
+<!--        <LinearLayout-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_gravity="top"-->
+<!--            android:orientation="horizontal">-->
 
-            <TextView
-                android:id="@+id/pUserMobileNumber"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/black"
-                android:textSize="15dp"></TextView>
-        </LinearLayout>
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="Mobile Number:"-->
+<!--                android:textColor="@color/black"-->
 
-    </LinearLayout>
+<!--                android:textSize="15dp"></TextView>-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/pUserMobileNumber"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:textSize="15dp"></TextView>-->
+<!--        </LinearLayout>-->
+
+<!--    </LinearLayout>-->
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -91,6 +102,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Payment"
+            android:textColor="@color/white"
             android:layout_marginBottom="10dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -102,10 +114,11 @@
             android:id="@+id/userName"
             android:layout_width="300dp"
             android:layout_height="40dp"
-            android:background="@drawable/input_button"
+            android:background="@drawable/whitebtnborder"
             android:padding="5dp"
             android:layout_marginBottom="5dp"
             android:hint="User Name"
+            android:textColorHint="@color/white"
             android:inputType="text"
             ></EditText>
 
@@ -113,10 +126,11 @@
             android:id="@+id/userEmail"
             android:layout_width="300dp"
             android:layout_height="40dp"
-            android:background="@drawable/input_button"
+            android:background="@drawable/whitebtnborder"
             android:padding="5dp"
             android:layout_marginBottom="5dp"
             android:hint="User Email"
+            android:textColorHint="@color/white"
             android:inputType="textEmailAddress"
             ></EditText>
 
@@ -124,10 +138,11 @@
             android:id="@+id/userAmount"
             android:layout_width="300dp"
             android:layout_height="40dp"
-            android:background="@drawable/input_button"
+            android:background="@drawable/whitebtnborder"
             android:padding="5dp"
             android:layout_marginBottom="5dp"
             android:hint="Enter The Amount "
+            android:textColorHint="@color/white"
             android:inputType="numberDecimal"
             ></EditText>
 
@@ -135,7 +150,7 @@
             android:id="@+id/userPay"
             android:layout_width="100dp"
             android:layout_height="35dp"
-            android:background="@drawable/btn_bckground"
+            android:background="@drawable/white_btn"
             android:padding="5dp"
             android:layout_marginBottom="5dp"
             android:text="Pay"
@@ -157,44 +172,6 @@
 
         </WebView>
 
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:background="@color/seeGreen"
-        android:layout_alignParentBottom="true"
-        >
-
-        <ImageView
-            android:id="@+id/homeLogo"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginLeft="20dp"
-            android:background="@drawable/baseline_home_24">
-        </ImageView>
-
-        <ImageView
-            android:id="@+id/peoplepageLogo"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginLeft="45dp"
-            android:background="@drawable/baseline_person_3_24">
-        </ImageView>
-        <ImageView
-            android:id="@+id/donationPageLogo"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginLeft="45dp"
-            android:background="@drawable/baseline_people_24">
-        </ImageView>
-        <ImageView
-            android:id="@+id/settingsLogo"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginLeft="45dp"
-            android:background="@drawable/baseline_admin_panel_settings_24">
-        </ImageView>
     </LinearLayout>
 
 

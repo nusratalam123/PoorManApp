@@ -9,14 +9,16 @@ import android.widget.Adapter;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
 public class donarMainHomePageActivity2 extends AppCompatActivity {
     private String selectDis,selectSubdis;
-    TextView tvDisSpinner,tvSubDisSpinner;
+    TextView tvDisSpinner,tvSubDisSpinner,logoutDm;
     Spinner  DisSpinner,SubDisSpinner;
+    ImageView arrowdm;
     ArrayAdapter<CharSequence> disAdepter,subDisAdapter;
     Button govt_btn,self_btn,user_btn;
 
@@ -25,6 +27,8 @@ public class donarMainHomePageActivity2 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_donar_main_home_page2);
+        arrowdm=findViewById(R.id.dmarraow);
+        logoutDm=findViewById(R.id.donar_loggOut11);
         DisSpinner=findViewById(R.id.spinner_distric);
 //        user_btn=findViewById(R.id.user_btn);
         donaremail=findViewById(R.id.donar_email);
@@ -34,7 +38,20 @@ public class donarMainHomePageActivity2 extends AppCompatActivity {
         disAdepter.setDropDownViewResource(androidx.appcompat.R.layout.support_simple_spinner_dropdown_item);
         DisSpinner.setAdapter(disAdepter);
 
-
+        logoutDm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent =new Intent(donarMainHomePageActivity2.this,donarHomeActivity2.class);
+                startActivity(intent);
+            }
+        });
+        arrowdm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent =new Intent(donarMainHomePageActivity2.this,AfterLogindonarHomePageActivity2.class);
+                startActivity(intent);
+            }
+        });
         DisSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -208,9 +225,9 @@ public class donarMainHomePageActivity2 extends AppCompatActivity {
         govt_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                dataPass.distric=selectDis.toString();
-                dataPass.Thana=SubDisSpinner.getSelectedItem().toString();
-                dataPass.email=email.toString();
+                govtdata.distric=selectDis.toString();
+                govtdata.Thana=SubDisSpinner.getSelectedItem().toString();
+                govtdata.email=email.toString();
 
                 Toast.makeText(donarMainHomePageActivity2.this, "Selected State: "+selectDis+"\nSelected District: "+selectSubdis, Toast.LENGTH_LONG).show();
                 Intent intent1=new Intent(donarMainHomePageActivity2.this, GovtInformationActivity2.class);

@@ -20,7 +20,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class PaymentPageActivity2 extends AppCompatActivity {
-    ImageView HomeLogo,DonationPageLogo,PeopleLogo,SettingLogo;
+    ImageView payArrow;
     // Constants for payment
     private static final String API_KEY = "982d381360a69d419689740d9f2e26ce36fb7a50";
     private static final String CHECKOUT_URL = "https://sandbox.uddoktapay.com/api/checkout-v2";
@@ -58,51 +58,31 @@ public class PaymentPageActivity2 extends AppCompatActivity {
 
         binding=ActivityPaymentPage2Binding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-        pName=findViewById(R.id.pUserName);
+       // pName=findViewById(R.id.pUserName);
         String PayName=paymentPassInfo.name;
-        pName.setText(PayName);
-        pDistric=findViewById(R.id.pUserDistric);
+       // pName.setText(PayName);
+       // pDistric=findViewById(R.id.pUserDistric);
         String Paydis=paymentPassInfo.distric;
-        pDistric.setText(Paydis);
-        pmobile=findViewById(R.id.pUserMobileNumber);
+       // pDistric.setText(Paydis);
+       // pmobile=findViewById(R.id.pUserMobileNumber);
         String Paymobile=paymentPassInfo.mobile;
-        pmobile.setText(Paymobile);
+       // pmobile.setText(Paymobile);
+
+          binding.payPagearraow.setOnClickListener(new View.OnClickListener() {
+              @Override
+              public void onClick(View view) {
+                  Intent intent =new Intent(PaymentPageActivity2.this, peopleHomeActivity2.class);
+                  startActivity(intent);
+              }
+          });
+
         db = new selfPaymentDatabase(this);
 
 
         //String Aname=(intent.getStringExtra("name"));
         //Toast.makeText(PaymentPageActivity2.this, "name"+stroename, Toast.LENGTH_SHORT).show();
 
-        binding.homeLogo.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent =new Intent(PaymentPageActivity2.this,MainActivity.class);
-                startActivity(intent);
-            }
-        });
 
-        binding.peoplepageLogo.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent =new Intent(PaymentPageActivity2.this,peopleLoginActivity2.class);
-                startActivity(intent);
-            }
-        });
-        binding.donationPageLogo.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent =new Intent(PaymentPageActivity2.this,donarHomeActivity2.class);
-                startActivity(intent);
-            }
-        });
-
-        binding.settingsLogo.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent =new Intent(PaymentPageActivity2.this,MainActivity.class);
-                startActivity(intent);
-            }
-        });
         binding.userPay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -132,7 +112,7 @@ public class PaymentPageActivity2 extends AppCompatActivity {
                         storedAmount = binding.userAmount.getText().toString();
                         storedInvoiceId = invoiceId;
                         storedPaymentMethod = paymentMethod;
-                        storedSenderNumber=binding.pUserMobileNumber.getText().toString() ;
+                        storedSenderNumber=PayMobile;
                         storedTransactionId = transactionId;
                         storedDate = date;
                         storedFee = fee;

@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -15,6 +16,7 @@ public class donarHomeActivity2 extends AppCompatActivity {
     Button btnlogin;
     DBHelper DB;
     TextView donarRegisterTxt;
+    ImageView arrow;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,7 +25,16 @@ public class donarHomeActivity2 extends AppCompatActivity {
         password = (EditText) findViewById(R.id.donar_signin_password);
         btnlogin=(Button) findViewById(R.id.donar_Signin_btn);
         donarRegisterTxt=findViewById(R.id.donar_register);
+        arrow=findViewById(R.id.arraow);
         DB = new DBHelper(this);
+
+        arrow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent2=new Intent(donarHomeActivity2.this,MainActivity.class);
+                startActivity(intent2);
+            }
+        });
 
         btnlogin.setOnClickListener(new View.OnClickListener() {
             @Override

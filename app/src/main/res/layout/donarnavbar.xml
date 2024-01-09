@@ -25,13 +25,13 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Android Knowledge"
+            android:text="Poor Man App"
             android:textColor="@color/white"
             android:textStyle="bold"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="contact@androidknowledge.com"
+            android:text="PoorMan@gmail.com"
             android:textColor="@color/white"
             android:textSize="14sp"
             android:layout_marginBottom="16dp"/>
@@ -54,7 +54,7 @@
             android:layout_marginLeft="20dp"
             android:layout_marginTop="5dp"
             android:padding="5dp"
-            android:drawableLeft="@drawable/home"
+            android:drawableLeft="@drawable/baseline_home_24"
             android:textColor="@color/white"
             android:textStyle="bold"/>
     </LinearLayout>
@@ -80,6 +80,45 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/ddrawerDonar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Donar"
+            android:textSize="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="5dp"
+            android:padding="5dp"
+            android:drawableLeft="@drawable/baseline_person_3_24"
+            android:textColor="@color/white"
+            android:textStyle="bold"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ddrawerPeople"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="People"
+            android:textSize="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="5dp"
+            android:padding="5dp"
+            android:drawableLeft="@drawable/baseline_person_3_24"
+            android:textColor="@color/white"
+            android:textStyle="bold"/>
+    </LinearLayout>
+    <LinearLayout
         android:id="@+id/ddrawerProfile"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -90,6 +129,25 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Profile"
+            android:textSize="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="5dp"
+            android:padding="5dp"
+            android:drawableLeft="@drawable/baseline_person_3_24"
+            android:textColor="@color/white"
+            android:textStyle="bold"/>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/ddrawerLogout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Log out"
             android:textSize="20dp"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="5dp"
